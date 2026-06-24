@@ -6,25 +6,8 @@ export default function DataDisclaimer() {
       <Info className="w-4 h-4 flex-shrink-0 mt-0.5 text-[#0B2545]" />
       <p>
         Postcode information is provided for general reference only. For
-        official delivery or address verification, please check{" "}
-        <a
-          href="https://auspost.com.au"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-[#0B2545]"
-        >
-          Australia Post
-        </a>{" "}
-        or{" "}
-        <a
-          href="https://www.nzpost.co.nz"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-[#0B2545]"
-        >
-          NZ Post
-        </a>
-        .
+        official delivery or address verification, please check the relevant
+        postal authority.
       </p>
     </div>
   );

@@ -1,10 +1,11 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import type { ReactNode } from "react";
 
 export interface FAQItem {
   question: string;
-  answer: string;
+  answer: string | ReactNode;
 }
 
 interface Props {
@@ -37,9 +38,11 @@ export default function FAQAccordion({ items }: Props) {
           </button>
           {open === i && (
             <div className="px-5 pb-4">
-              <p className="text-[#6B7280] text-sm leading-relaxed">
-                {item.answer}
-              </p>
+              {typeof item.answer === "string" ? (
+                <p className="text-[#6B7280] text-sm leading-relaxed">{item.answer}</p>
+              ) : (
+                <div className="text-[#6B7280] text-sm leading-relaxed">{item.answer}</div>
+              )}
             </div>
           )}
         </div>

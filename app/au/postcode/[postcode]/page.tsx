@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
@@ -9,6 +10,7 @@ import DataDisclaimer from "@/components/ui/DataDisclaimer";
 import ShareButtons from "@/components/ui/ShareButtons";
 import MapWrapper from "@/components/ui/MapWrapper";
 import SearchBox from "@/components/ui/SearchBox";
+import CopyButton from "@/components/ui/CopyButton";
 import {
   getAUPostcodeGroups,
   getNearbyAUPostcodes,
@@ -55,9 +57,28 @@ export default async function AUPostcodePage({ params }: Props) {
   const hasMap = pg.lat !== 0 && pg.lng !== 0;
   const pageUrl = absoluteUrl(`/au/postcode/${postcode}`);
 
+  const suburbLinks = pg.localities.map((loc, i) => {
+    const slug = `${loc.toLowerCase().replace(/\s+/g, "-")}-${pg.state.toLowerCase()}`;
+    return (
+      <span key={loc}>
+        <Link href={`/au/suburb/${encodeURIComponent(slug)}`} className="text-[#E8472A] hover:underline font-medium">
+          {titleCase(loc)}
+        </Link>
+        {i < pg.localities.length - 1 ? ", " : "."}
+      </span>
+    );
+  });
+
   const faqs = [
     { question: `What is postcode ${postcode}?`, answer: `Postcode ${postcode} is an Australian postcode covering ${pg.localities.map(titleCase).join(", ")} in ${stName}.` },
-    { question: `Which suburbs are in postcode ${postcode}?`, answer: `Postcode ${postcode} includes the following ${pg.localities.length > 1 ? "suburbs" : "suburb"}: ${pg.localities.map(titleCase).join(", ")}.` },
+    {
+      question: `Which suburbs are in postcode ${postcode}?`,
+      answer: (
+        <p>
+          Postcode {postcode} includes the following {pg.localities.length > 1 ? "suburbs" : "suburb"}: {suburbLinks}
+        </p>
+      ),
+    },
     { question: `What state is postcode ${postcode} in?`, answer: `Postcode ${postcode} is in ${stName} (${pg.state}), Australia.` },
     { question: `Where is postcode ${postcode} located?`, answer: `Postcode ${postcode} is located in ${stName}${hasMap ? ` at approximately ${pg.lat.toFixed(4)}°, ${pg.lng.toFixed(4)}°` : ""}.` },
     { question: `How can I find nearby postcodes?`, answer: `Nearby postcodes include ${nearby.slice(0, 4).map((n) => n.postcode).join(", ")}. You can also use the search box to find other postcodes in ${stName}.` },
@@ -101,15 +122,21 @@ export default async function AUPostcodePage({ params }: Props) {
             <div className="lg:col-span-2 space-y-8">
               {/* Details card */}
               <div className="bg-white rounded-2xl border border-[#E2E6ED] p-6">
-                <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545] mb-5">
-                  Postcode Details
-                </h2>
-                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center justify-between mb-5">
+                  <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545]">
+                    Postcode Details
+                  </h2>
+                  <CopyButton
+                    text={`Postcode ${postcode}\n${pg.localities.map(titleCase).join(", ")}\n${stName} (${pg.state}), Australia`}
+                    label="Copy address"
+                    className="text-[#6B7280] hover:text-[#1A1A2E]"
+                  />
+                </div>
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
                   {[
                     { label: "Postcode", value: postcode },
                     { label: "Country", value: "Australia 🇦🇺" },
                     { label: "State / Territory", value: `${stName} (${pg.state})` },
-                    { label: "Suburbs / Localities", value: pg.localities.map(titleCase).join(", ") },
                     ...(hasMap ? [
                       { label: "Latitude", value: pg.lat.toFixed(6) },
                       { label: "Longitude", value: pg.lng.toFixed(6) },
@@ -121,6 +148,36 @@ export default async function AUPostcodePage({ params }: Props) {
                     </div>
                   ))}
                 </dl>
+                <div className="mb-5">
+                  <p className="text-[#6B7280] text-xs uppercase tracking-wider mb-2">Suburbs / Localities</p>
+                  <div className="flex flex-wrap gap-2">
+                    {pg.localities.map((loc) => {
+                      const slug = `${loc.toLowerCase().replace(/\s+/g, "-")}-${pg.state.toLowerCase()}`;
+                      return (
+                        <Link
+                          key={loc}
+                          href={`/au/suburb/${encodeURIComponent(slug)}`}
+                          className="px-3 py-1.5 bg-[#F4F6F9] border border-[#E2E6ED] text-[#1A1A2E] text-sm rounded-lg hover:border-[#E8472A] hover:text-[#E8472A] transition-colors"
+                        >
+                          {titleCase(loc)}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+                {hasMap && (
+                  <div className="pt-4 border-t border-[#E2E6ED]">
+                    <a
+                      href={`https://www.openstreetmap.org/?mlat=${pg.lat}&mlon=${pg.lng}&zoom=14&layers=M`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#F4F6F9] border border-[#E2E6ED] rounded-xl text-sm font-medium text-[#1A1A2E] hover:border-[#E8472A] hover:text-[#E8472A] transition-colors"
+                    >
+                      <MapPin className="w-4 h-4" />
+                      Open in OpenStreetMap ↗
+                    </a>
+                  </div>
+                )}
               </div>
 
               {/* Suburbs list */}

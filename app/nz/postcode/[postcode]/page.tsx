@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { MapPin } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
@@ -9,6 +10,7 @@ import DataDisclaimer from "@/components/ui/DataDisclaimer";
 import ShareButtons from "@/components/ui/ShareButtons";
 import SearchBox from "@/components/ui/SearchBox";
 import MapWrapper from "@/components/ui/MapWrapper";
+import CopyButton from "@/components/ui/CopyButton";
 import {
   getNZPostcodeGroups,
   getNearbyNZPostcodes,
@@ -48,9 +50,28 @@ export default async function NZPostcodePage({ params }: Props) {
   const hasMap = pg.lat !== 0 && pg.lng !== 0;
   const pageUrl = absoluteUrl(`/nz/postcode/${postcode}`);
 
+  const localityLinks = pg.localities.map((loc, i) => {
+    const slug = slugify(loc) + "-nz";
+    return (
+      <span key={loc}>
+        <Link href={`/nz/locality/${encodeURIComponent(slug)}`} className="text-[#2D6A4F] hover:underline font-medium">
+          {titleCase(loc)}
+        </Link>
+        {i < pg.localities.length - 1 ? ", " : "."}
+      </span>
+    );
+  });
+
   const faqs = [
     { question: `What is NZ postcode ${postcode}?`, answer: `Postcode ${postcode} is a New Zealand postcode covering ${pg.localities.map(titleCase).join(", ")} in the ${pg.state} region.` },
-    { question: `Which localities are in postcode ${postcode}?`, answer: `Postcode ${postcode} includes: ${pg.localities.map(titleCase).join(", ")}.` },
+    {
+      question: `Which localities are in postcode ${postcode}?`,
+      answer: (
+        <p>
+          Postcode {postcode} includes the following {pg.localities.length > 1 ? "localities" : "locality"}: {localityLinks}
+        </p>
+      ),
+    },
     { question: `What region is postcode ${postcode} in?`, answer: `Postcode ${postcode} is in the ${pg.state} region of New Zealand.` },
     { question: `Where is postcode ${postcode} located?`, answer: `Postcode ${postcode} is in the ${pg.state} region of New Zealand${hasMap ? ` at approximately ${pg.lat.toFixed(4)}°, ${pg.lng.toFixed(4)}°` : ""}.` },
   ];
@@ -90,13 +111,19 @@ export default async function NZPostcodePage({ params }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div className="lg:col-span-2 space-y-8">
               <div className="bg-white rounded-2xl border border-[#E2E6ED] p-6">
-                <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545] mb-5">Postcode Details</h2>
-                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center justify-between mb-5">
+                  <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545]">Postcode Details</h2>
+                  <CopyButton
+                    text={`Postcode ${postcode}\n${pg.localities.map(titleCase).join(", ")}\n${pg.state}, New Zealand`}
+                    label="Copy address"
+                    className="text-[#6B7280] hover:text-[#1A1A2E]"
+                  />
+                </div>
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
                   {[
                     { label: "Postcode", value: postcode },
                     { label: "Country", value: "New Zealand 🇳🇿" },
                     { label: "Region", value: pg.state },
-                    { label: "Localities", value: pg.localities.map(titleCase).join(", ") },
                     ...(hasMap ? [
                       { label: "Latitude", value: pg.lat.toFixed(6) },
                       { label: "Longitude", value: pg.lng.toFixed(6) },
@@ -108,6 +135,36 @@ export default async function NZPostcodePage({ params }: Props) {
                     </div>
                   ))}
                 </dl>
+                <div className="mb-5">
+                  <p className="text-[#6B7280] text-xs uppercase tracking-wider mb-2">Localities</p>
+                  <div className="flex flex-wrap gap-2">
+                    {pg.localities.map((loc) => {
+                      const slug = slugify(loc) + "-nz";
+                      return (
+                        <Link
+                          key={loc}
+                          href={`/nz/locality/${encodeURIComponent(slug)}`}
+                          className="px-3 py-1.5 bg-[#F4F6F9] border border-[#E2E6ED] text-[#1A1A2E] text-sm rounded-lg hover:border-[#2D6A4F] hover:text-[#2D6A4F] transition-colors"
+                        >
+                          {titleCase(loc)}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+                {hasMap && (
+                  <div className="pt-4 border-t border-[#E2E6ED]">
+                    <a
+                      href={`https://www.openstreetmap.org/?mlat=${pg.lat}&mlon=${pg.lng}&zoom=14&layers=M`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#F4F6F9] border border-[#E2E6ED] rounded-xl text-sm font-medium text-[#1A1A2E] hover:border-[#2D6A4F] hover:text-[#2D6A4F] transition-colors"
+                    >
+                      <MapPin className="w-4 h-4" />
+                      Open in OpenStreetMap ↗
+                    </a>
+                  </div>
+                )}
               </div>
 
               {hasMap && (
