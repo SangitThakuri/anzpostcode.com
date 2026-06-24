@@ -1,0 +1,1622 @@
+[
+  {
+    "id": 1,
+    "postcode": "1010",
+    "locality": "Auckland CBD",
+    "region": "Auckland",
+    "lat": -36.8485,
+    "lng": 174.7633,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 2,
+    "postcode": "1011",
+    "locality": "Parnell",
+    "region": "Auckland",
+    "lat": -36.8591,
+    "lng": 174.7802,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 3,
+    "postcode": "1021",
+    "locality": "Ponsonby",
+    "region": "Auckland",
+    "lat": -36.853,
+    "lng": 174.7461,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 4,
+    "postcode": "1022",
+    "locality": "Grey Lynn",
+    "region": "Auckland",
+    "lat": -36.866,
+    "lng": 174.7393,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 5,
+    "postcode": "1023",
+    "locality": "Kingsland",
+    "region": "Auckland",
+    "lat": -36.8737,
+    "lng": 174.7418,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 6,
+    "postcode": "1024",
+    "locality": "Eden Terrace",
+    "region": "Auckland",
+    "lat": -36.8681,
+    "lng": 174.7559,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 7,
+    "postcode": "1025",
+    "locality": "Newmarket",
+    "region": "Auckland",
+    "lat": -36.8707,
+    "lng": 174.7774,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 8,
+    "postcode": "1026",
+    "locality": "Remuera",
+    "region": "Auckland",
+    "lat": -36.8782,
+    "lng": 174.7887,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 9,
+    "postcode": "1050",
+    "locality": "Mission Bay",
+    "region": "Auckland",
+    "lat": -36.8596,
+    "lng": 174.8328,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 10,
+    "postcode": "1051",
+    "locality": "St Heliers",
+    "region": "Auckland",
+    "lat": -36.8691,
+    "lng": 174.8553,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 11,
+    "postcode": "1060",
+    "locality": "Mt Eden",
+    "region": "Auckland",
+    "lat": -36.8837,
+    "lng": 174.762,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 12,
+    "postcode": "1061",
+    "locality": "Balmoral",
+    "region": "Auckland",
+    "lat": -36.8955,
+    "lng": 174.7597,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 13,
+    "postcode": "1071",
+    "locality": "One Tree Hill",
+    "region": "Auckland",
+    "lat": -36.9046,
+    "lng": 174.7803,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 14,
+    "postcode": "1072",
+    "locality": "Ellerslie",
+    "region": "Auckland",
+    "lat": -36.905,
+    "lng": 174.8017,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 15,
+    "postcode": "0610",
+    "locality": "Albany",
+    "region": "Auckland",
+    "lat": -36.7274,
+    "lng": 174.6999,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 16,
+    "postcode": "0620",
+    "locality": "Takapuna",
+    "region": "Auckland",
+    "lat": -36.7864,
+    "lng": 174.7752,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 17,
+    "postcode": "0622",
+    "locality": "Milford",
+    "region": "Auckland",
+    "lat": -36.7754,
+    "lng": 174.7752,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 18,
+    "postcode": "0624",
+    "locality": "Devonport",
+    "region": "Auckland",
+    "lat": -36.8298,
+    "lng": 174.7973,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 19,
+    "postcode": "0626",
+    "locality": "Birkenhead",
+    "region": "Auckland",
+    "lat": -36.8148,
+    "lng": 174.7357,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 20,
+    "postcode": "0627",
+    "locality": "Northcote",
+    "region": "Auckland",
+    "lat": -36.7997,
+    "lng": 174.7508,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 21,
+    "postcode": "0629",
+    "locality": "Glenfield",
+    "region": "Auckland",
+    "lat": -36.7741,
+    "lng": 174.7274,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 22,
+    "postcode": "0632",
+    "locality": "Browns Bay",
+    "region": "Auckland",
+    "lat": -36.7162,
+    "lng": 174.7405,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 23,
+    "postcode": "0740",
+    "locality": "Orewa",
+    "region": "Auckland",
+    "lat": -36.5993,
+    "lng": 174.698,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 24,
+    "postcode": "0930",
+    "locality": "Helensville",
+    "region": "Auckland",
+    "lat": -36.6668,
+    "lng": 174.4623,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 25,
+    "postcode": "0602",
+    "locality": "Henderson",
+    "region": "Auckland",
+    "lat": -36.878,
+    "lng": 174.6357,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 26,
+    "postcode": "0604",
+    "locality": "Te Atatu",
+    "region": "Auckland",
+    "lat": -36.8503,
+    "lng": 174.654,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 27,
+    "postcode": "0612",
+    "locality": "Waitakere",
+    "region": "Auckland",
+    "lat": -36.8956,
+    "lng": 174.5593,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 28,
+    "postcode": "0614",
+    "locality": "Titirangi",
+    "region": "Auckland",
+    "lat": -36.9238,
+    "lng": 174.6566,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 29,
+    "postcode": "0618",
+    "locality": "New Lynn",
+    "region": "Auckland",
+    "lat": -36.9085,
+    "lng": 174.6857,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 30,
+    "postcode": "1701",
+    "locality": "Manukau City Centre",
+    "region": "Auckland",
+    "lat": -36.9934,
+    "lng": 174.8794,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 31,
+    "postcode": "1702",
+    "locality": "Papatoetoe",
+    "region": "Auckland",
+    "lat": -36.9817,
+    "lng": 174.8497,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 32,
+    "postcode": "2010",
+    "locality": "Papakura",
+    "region": "Auckland",
+    "lat": -37.0655,
+    "lng": 174.9438,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 33,
+    "postcode": "2105",
+    "locality": "Pukekohe",
+    "region": "Auckland",
+    "lat": -37.2016,
+    "lng": 174.9016,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 34,
+    "postcode": "2113",
+    "locality": "Waiuku",
+    "region": "Auckland",
+    "lat": -37.2487,
+    "lng": 174.7345,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 35,
+    "postcode": "2580",
+    "locality": "Tuakau",
+    "region": "Auckland",
+    "lat": -37.2601,
+    "lng": 174.9535,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 36,
+    "postcode": "6011",
+    "locality": "Wellington Central",
+    "region": "Wellington",
+    "lat": -41.2866,
+    "lng": 174.7756,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 37,
+    "postcode": "6012",
+    "locality": "Thorndon",
+    "region": "Wellington",
+    "lat": -41.2782,
+    "lng": 174.7738,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 38,
+    "postcode": "6021",
+    "locality": "Kelburn",
+    "region": "Wellington",
+    "lat": -41.2871,
+    "lng": 174.7686,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 39,
+    "postcode": "6022",
+    "locality": "Karori",
+    "region": "Wellington",
+    "lat": -41.2929,
+    "lng": 174.7452,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 40,
+    "postcode": "6023",
+    "locality": "Northland",
+    "region": "Wellington",
+    "lat": -41.2802,
+    "lng": 174.7579,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 41,
+    "postcode": "6035",
+    "locality": "Johnsonville",
+    "region": "Wellington",
+    "lat": -41.223,
+    "lng": 174.8027,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 42,
+    "postcode": "6037",
+    "locality": "Newlands",
+    "region": "Wellington",
+    "lat": -41.2133,
+    "lng": 174.8249,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 43,
+    "postcode": "6021",
+    "locality": "Te Aro",
+    "region": "Wellington",
+    "lat": -41.2924,
+    "lng": 174.7766,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 44,
+    "postcode": "6040",
+    "locality": "Miramar",
+    "region": "Wellington",
+    "lat": -41.3218,
+    "lng": 174.8082,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 45,
+    "postcode": "6041",
+    "locality": "Kilbirnie",
+    "region": "Wellington",
+    "lat": -41.3165,
+    "lng": 174.796,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 46,
+    "postcode": "6042",
+    "locality": "Lyall Bay",
+    "region": "Wellington",
+    "lat": -41.3327,
+    "lng": 174.803,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 47,
+    "postcode": "6021",
+    "locality": "Island Bay",
+    "region": "Wellington",
+    "lat": -41.3404,
+    "lng": 174.774,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 48,
+    "postcode": "5010",
+    "locality": "Porirua",
+    "region": "Wellington",
+    "lat": -41.134,
+    "lng": 174.8459,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 49,
+    "postcode": "5012",
+    "locality": "Tawa",
+    "region": "Wellington",
+    "lat": -41.1847,
+    "lng": 174.8271,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 50,
+    "postcode": "5018",
+    "locality": "Churton Park",
+    "region": "Wellington",
+    "lat": -41.2208,
+    "lng": 174.7877,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 51,
+    "postcode": "5240",
+    "locality": "Paraparaumu",
+    "region": "Wellington",
+    "lat": -40.915,
+    "lng": 175.0018,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 52,
+    "postcode": "5252",
+    "locality": "Waikanae",
+    "region": "Wellington",
+    "lat": -40.876,
+    "lng": 175.0617,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 53,
+    "postcode": "5010",
+    "locality": "Hutt City",
+    "region": "Wellington",
+    "lat": -41.2,
+    "lng": 174.9,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 54,
+    "postcode": "5010",
+    "locality": "Lower Hutt",
+    "region": "Wellington",
+    "lat": -41.2128,
+    "lng": 174.9086,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 55,
+    "postcode": "5018",
+    "locality": "Upper Hutt",
+    "region": "Wellington",
+    "lat": -41.1238,
+    "lng": 175.0548,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 56,
+    "postcode": "5012",
+    "locality": "Petone",
+    "region": "Wellington",
+    "lat": -41.224,
+    "lng": 174.8741,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 57,
+    "postcode": "8011",
+    "locality": "Christchurch Central",
+    "region": "Canterbury",
+    "lat": -43.5321,
+    "lng": 172.6362,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 58,
+    "postcode": "8013",
+    "locality": "Addington",
+    "region": "Canterbury",
+    "lat": -43.5469,
+    "lng": 172.6254,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 59,
+    "postcode": "8014",
+    "locality": "Sydenham",
+    "region": "Canterbury",
+    "lat": -43.5477,
+    "lng": 172.6376,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 60,
+    "postcode": "8022",
+    "locality": "Riccarton",
+    "region": "Canterbury",
+    "lat": -43.5328,
+    "lng": 172.5972,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 61,
+    "postcode": "8023",
+    "locality": "Hornby",
+    "region": "Canterbury",
+    "lat": -43.562,
+    "lng": 172.5282,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 62,
+    "postcode": "8024",
+    "locality": "Halswell",
+    "region": "Canterbury",
+    "lat": -43.5905,
+    "lng": 172.5781,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 63,
+    "postcode": "8025",
+    "locality": "Spreydon",
+    "region": "Canterbury",
+    "lat": -43.5607,
+    "lng": 172.6175,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 64,
+    "postcode": "8041",
+    "locality": "Papanui",
+    "region": "Canterbury",
+    "lat": -43.4957,
+    "lng": 172.6269,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 65,
+    "postcode": "8052",
+    "locality": "New Brighton",
+    "region": "Canterbury",
+    "lat": -43.5052,
+    "lng": 172.7274,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 66,
+    "postcode": "8061",
+    "locality": "Rangiora",
+    "region": "Canterbury",
+    "lat": -43.3053,
+    "lng": 172.5893,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 67,
+    "postcode": "7671",
+    "locality": "Kaikoura",
+    "region": "Canterbury",
+    "lat": -42.4003,
+    "lng": 173.6808,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 68,
+    "postcode": "7910",
+    "locality": "Timaru",
+    "region": "Canterbury",
+    "lat": -44.3966,
+    "lng": 171.2552,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 69,
+    "postcode": "7924",
+    "locality": "Ashburton",
+    "region": "Canterbury",
+    "lat": -43.9038,
+    "lng": 171.7285,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 70,
+    "postcode": "3200",
+    "locality": "Hamilton Central",
+    "region": "Waikato",
+    "lat": -37.787,
+    "lng": 175.2793,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 71,
+    "postcode": "3204",
+    "locality": "Frankton",
+    "region": "Waikato",
+    "lat": -37.8075,
+    "lng": 175.2601,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 72,
+    "postcode": "3206",
+    "locality": "Nawton",
+    "region": "Waikato",
+    "lat": -37.7693,
+    "lng": 175.2487,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 73,
+    "postcode": "3210",
+    "locality": "Flagstaff",
+    "region": "Waikato",
+    "lat": -37.7519,
+    "lng": 175.2921,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 74,
+    "postcode": "3214",
+    "locality": "Hamilton East",
+    "region": "Waikato",
+    "lat": -37.7832,
+    "lng": 175.297,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 75,
+    "postcode": "3216",
+    "locality": "Rototuna",
+    "region": "Waikato",
+    "lat": -37.7457,
+    "lng": 175.3011,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 76,
+    "postcode": "3281",
+    "locality": "Cambridge",
+    "region": "Waikato",
+    "lat": -37.8859,
+    "lng": 175.4695,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 77,
+    "postcode": "3289",
+    "locality": "Te Awamutu",
+    "region": "Waikato",
+    "lat": -38.0088,
+    "lng": 175.3266,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 78,
+    "postcode": "3400",
+    "locality": "Thames",
+    "region": "Waikato",
+    "lat": -37.1378,
+    "lng": 175.5427,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 79,
+    "postcode": "3377",
+    "locality": "Morrinsville",
+    "region": "Waikato",
+    "lat": -37.6526,
+    "lng": 175.5356,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 80,
+    "postcode": "3240",
+    "locality": "Huntly",
+    "region": "Waikato",
+    "lat": -37.5601,
+    "lng": 175.1563,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 81,
+    "postcode": "3434",
+    "locality": "Paeroa",
+    "region": "Waikato",
+    "lat": -37.378,
+    "lng": 175.68,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 82,
+    "postcode": "3110",
+    "locality": "Tauranga",
+    "region": "Bay of Plenty",
+    "lat": -37.6878,
+    "lng": 176.1651,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 83,
+    "postcode": "3112",
+    "locality": "Greerton",
+    "region": "Bay of Plenty",
+    "lat": -37.7174,
+    "lng": 176.1455,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 84,
+    "postcode": "3116",
+    "locality": "Papamoa",
+    "region": "Bay of Plenty",
+    "lat": -37.7301,
+    "lng": 176.2875,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 85,
+    "postcode": "3118",
+    "locality": "Welcome Bay",
+    "region": "Bay of Plenty",
+    "lat": -37.7476,
+    "lng": 176.189,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 86,
+    "postcode": "3120",
+    "locality": "Whakatane",
+    "region": "Bay of Plenty",
+    "lat": -37.9527,
+    "lng": 176.9948,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 87,
+    "postcode": "3140",
+    "locality": "Rotorua",
+    "region": "Bay of Plenty",
+    "lat": -38.1368,
+    "lng": 176.2497,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 88,
+    "postcode": "3130",
+    "locality": "Edgecumbe",
+    "region": "Bay of Plenty",
+    "lat": -37.9838,
+    "lng": 176.8291,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 89,
+    "postcode": "3010",
+    "locality": "Opotiki",
+    "region": "Bay of Plenty",
+    "lat": -38.0117,
+    "lng": 177.2974,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 90,
+    "postcode": "9010",
+    "locality": "Dunedin Central",
+    "region": "Otago",
+    "lat": -45.8788,
+    "lng": 170.5028,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 91,
+    "postcode": "9012",
+    "locality": "South Dunedin",
+    "region": "Otago",
+    "lat": -45.9021,
+    "lng": 170.5008,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 92,
+    "postcode": "9016",
+    "locality": "Mosgiel",
+    "region": "Otago",
+    "lat": -45.8788,
+    "lng": 170.3488,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 93,
+    "postcode": "9022",
+    "locality": "St Kilda",
+    "region": "Otago",
+    "lat": -45.9028,
+    "lng": 170.5088,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 94,
+    "postcode": "9024",
+    "locality": "Corstorphine",
+    "region": "Otago",
+    "lat": -45.8818,
+    "lng": 170.4618,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 95,
+    "postcode": "9300",
+    "locality": "Queenstown",
+    "region": "Otago",
+    "lat": -45.0312,
+    "lng": 168.6626,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 96,
+    "postcode": "9382",
+    "locality": "Wanaka",
+    "region": "Otago",
+    "lat": -44.7027,
+    "lng": 169.1321,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 97,
+    "postcode": "9400",
+    "locality": "Oamaru",
+    "region": "Otago",
+    "lat": -45.0953,
+    "lng": 170.9705,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 98,
+    "postcode": "9740",
+    "locality": "Alexandra",
+    "region": "Otago",
+    "lat": -45.2481,
+    "lng": 169.3703,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 99,
+    "postcode": "9810",
+    "locality": "Invercargill Central",
+    "region": "Southland",
+    "lat": -46.4131,
+    "lng": 168.3538,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 100,
+    "postcode": "9812",
+    "locality": "Bluff",
+    "region": "Southland",
+    "lat": -46.599,
+    "lng": 168.3432,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 101,
+    "postcode": "9840",
+    "locality": "Gore",
+    "region": "Southland",
+    "lat": -46.1006,
+    "lng": 168.9459,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 102,
+    "postcode": "9876",
+    "locality": "Winton",
+    "region": "Southland",
+    "lat": -46.1468,
+    "lng": 168.3217,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 103,
+    "postcode": "0110",
+    "locality": "Whangarei",
+    "region": "Northland",
+    "lat": -35.7249,
+    "lng": 174.3237,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 104,
+    "postcode": "0112",
+    "locality": "Kamo",
+    "region": "Northland",
+    "lat": -35.6934,
+    "lng": 174.3175,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 105,
+    "postcode": "0140",
+    "locality": "Kerikeri",
+    "region": "Northland",
+    "lat": -35.2319,
+    "lng": 173.9445,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 106,
+    "postcode": "0200",
+    "locality": "Dargaville",
+    "region": "Northland",
+    "lat": -35.9346,
+    "lng": 173.875,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 107,
+    "postcode": "0241",
+    "locality": "Kaitaia",
+    "region": "Northland",
+    "lat": -35.1122,
+    "lng": 173.2635,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 108,
+    "postcode": "0420",
+    "locality": "Wellsford",
+    "region": "Northland",
+    "lat": -36.2919,
+    "lng": 174.5277,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 109,
+    "postcode": "4410",
+    "locality": "Palmerston North",
+    "region": "Manawatu-Whanganui",
+    "lat": -40.3523,
+    "lng": 175.6082,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 110,
+    "postcode": "4412",
+    "locality": "Awapuni",
+    "region": "Manawatu-Whanganui",
+    "lat": -40.3741,
+    "lng": 175.5852,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 111,
+    "postcode": "4414",
+    "locality": "Kelvin Grove",
+    "region": "Manawatu-Whanganui",
+    "lat": -40.3311,
+    "lng": 175.5853,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 112,
+    "postcode": "4500",
+    "locality": "Whanganui",
+    "region": "Manawatu-Whanganui",
+    "lat": -39.9333,
+    "lng": 175.0505,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 113,
+    "postcode": "4810",
+    "locality": "Levin",
+    "region": "Manawatu-Whanganui",
+    "lat": -40.6219,
+    "lng": 175.2757,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 114,
+    "postcode": "4742",
+    "locality": "Feilding",
+    "region": "Manawatu-Whanganui",
+    "lat": -40.2254,
+    "lng": 175.568,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 115,
+    "postcode": "4110",
+    "locality": "Napier",
+    "region": "Hawke's Bay",
+    "lat": -39.4928,
+    "lng": 176.912,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 116,
+    "postcode": "4112",
+    "locality": "Taradale",
+    "region": "Hawke's Bay",
+    "lat": -39.538,
+    "lng": 176.8602,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 117,
+    "postcode": "4120",
+    "locality": "Hastings",
+    "region": "Hawke's Bay",
+    "lat": -39.6393,
+    "lng": 176.8382,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 118,
+    "postcode": "4122",
+    "locality": "Havelock North",
+    "region": "Hawke's Bay",
+    "lat": -39.6668,
+    "lng": 176.885,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 119,
+    "postcode": "4192",
+    "locality": "Wairoa",
+    "region": "Hawke's Bay",
+    "lat": -39.0349,
+    "lng": 177.4096,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 120,
+    "postcode": "4272",
+    "locality": "Waipawa",
+    "region": "Hawke's Bay",
+    "lat": -39.9447,
+    "lng": 176.594,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 121,
+    "postcode": "4310",
+    "locality": "New Plymouth",
+    "region": "Taranaki",
+    "lat": -39.0556,
+    "lng": 174.0752,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 122,
+    "postcode": "4312",
+    "locality": "Strandon",
+    "region": "Taranaki",
+    "lat": -39.0498,
+    "lng": 174.1046,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 123,
+    "postcode": "4340",
+    "locality": "Hawera",
+    "region": "Taranaki",
+    "lat": -39.5905,
+    "lng": 174.2836,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 124,
+    "postcode": "4343",
+    "locality": "Patea",
+    "region": "Taranaki",
+    "lat": -39.7538,
+    "lng": 174.4707,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 125,
+    "postcode": "7010",
+    "locality": "Nelson",
+    "region": "Nelson",
+    "lat": -41.2707,
+    "lng": 173.284,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 126,
+    "postcode": "7011",
+    "locality": "Nelson Central",
+    "region": "Nelson",
+    "lat": -41.2952,
+    "lng": 173.2441,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 127,
+    "postcode": "7050",
+    "locality": "Richmond",
+    "region": "Nelson",
+    "lat": -41.334,
+    "lng": 173.174,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 128,
+    "postcode": "7201",
+    "locality": "Blenheim",
+    "region": "Marlborough",
+    "lat": -41.5132,
+    "lng": 173.9578,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 129,
+    "postcode": "7210",
+    "locality": "Picton",
+    "region": "Marlborough",
+    "lat": -41.291,
+    "lng": 174.0052,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 130,
+    "postcode": "7240",
+    "locality": "Havelock",
+    "region": "Marlborough",
+    "lat": -41.2834,
+    "lng": 173.7739,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 131,
+    "postcode": "4010",
+    "locality": "Gisborne",
+    "region": "Gisborne",
+    "lat": -38.6622,
+    "lng": 178.0178,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 132,
+    "postcode": "4012",
+    "locality": "Elgin",
+    "region": "Gisborne",
+    "lat": -38.6576,
+    "lng": 178.0295,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 133,
+    "postcode": "4040",
+    "locality": "Wairoa",
+    "region": "Gisborne",
+    "lat": -39.0357,
+    "lng": 177.4106,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 134,
+    "postcode": "7110",
+    "locality": "Motueka",
+    "region": "Tasman",
+    "lat": -41.1179,
+    "lng": 173.0093,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 135,
+    "postcode": "7160",
+    "locality": "Takaka",
+    "region": "Tasman",
+    "lat": -40.8519,
+    "lng": 172.8072,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 136,
+    "postcode": "7173",
+    "locality": "Murchison",
+    "region": "Tasman",
+    "lat": -41.8018,
+    "lng": 172.3396,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 137,
+    "postcode": "7805",
+    "locality": "Greymouth",
+    "region": "West Coast",
+    "lat": -42.459,
+    "lng": 171.208,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 138,
+    "postcode": "7825",
+    "locality": "Hokitika",
+    "region": "West Coast",
+    "lat": -42.7166,
+    "lng": 170.974,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 139,
+    "postcode": "7892",
+    "locality": "Westport",
+    "region": "West Coast",
+    "lat": -41.7546,
+    "lng": 171.5989,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 140,
+    "postcode": "1542",
+    "locality": "Mt Albert",
+    "region": "Auckland",
+    "lat": -36.8901,
+    "lng": 174.7109,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 141,
+    "postcode": "1546",
+    "locality": "Royal Oak",
+    "region": "Auckland",
+    "lat": -36.906,
+    "lng": 174.7672,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 142,
+    "postcode": "1548",
+    "locality": "Onehunga",
+    "region": "Auckland",
+    "lat": -36.927,
+    "lng": 174.7919,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 143,
+    "postcode": "1010",
+    "locality": "Grafton",
+    "region": "Auckland",
+    "lat": -36.8619,
+    "lng": 174.7708,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 144,
+    "postcode": "1640",
+    "locality": "Blockhouse Bay",
+    "region": "Auckland",
+    "lat": -36.9307,
+    "lng": 174.7124,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 145,
+    "postcode": "1642",
+    "locality": "Avondale",
+    "region": "Auckland",
+    "lat": -36.8993,
+    "lng": 174.7274,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 146,
+    "postcode": "2022",
+    "locality": "Howick",
+    "region": "Auckland",
+    "lat": -36.9,
+    "lng": 174.9268,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 147,
+    "postcode": "2024",
+    "locality": "Pakuranga",
+    "region": "Auckland",
+    "lat": -36.8994,
+    "lng": 174.8987,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 148,
+    "postcode": "2010",
+    "locality": "Manurewa",
+    "region": "Auckland",
+    "lat": -37.0233,
+    "lng": 174.8988,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 149,
+    "postcode": "2104",
+    "locality": "Waiuku",
+    "region": "Auckland",
+    "lat": -37.2487,
+    "lng": 174.7345,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 150,
+    "postcode": "0618",
+    "locality": "Sunnyvale",
+    "region": "Auckland",
+    "lat": -36.8987,
+    "lng": 174.6701,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 151,
+    "postcode": "0600",
+    "locality": "Massey",
+    "region": "Auckland",
+    "lat": -36.854,
+    "lng": 174.6266,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 152,
+    "postcode": "6022",
+    "locality": "Wilton",
+    "region": "Wellington",
+    "lat": -41.2797,
+    "lng": 174.748,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 153,
+    "postcode": "6023",
+    "locality": "Ngaio",
+    "region": "Wellington",
+    "lat": -41.2586,
+    "lng": 174.7756,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 154,
+    "postcode": "6035",
+    "locality": "Newlands",
+    "region": "Wellington",
+    "lat": -41.2152,
+    "lng": 174.8144,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 155,
+    "postcode": "6022",
+    "locality": "Crofton Downs",
+    "region": "Wellington",
+    "lat": -41.2567,
+    "lng": 174.7623,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 156,
+    "postcode": "5014",
+    "locality": "Naenae",
+    "region": "Wellington",
+    "lat": -41.2193,
+    "lng": 174.9468,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 157,
+    "postcode": "5022",
+    "locality": "Taita",
+    "region": "Wellington",
+    "lat": -41.1894,
+    "lng": 174.959,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 158,
+    "postcode": "8053",
+    "locality": "Sumner",
+    "region": "Canterbury",
+    "lat": -43.5694,
+    "lng": 172.7497,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 159,
+    "postcode": "8081",
+    "locality": "Rolleston",
+    "region": "Canterbury",
+    "lat": -43.5961,
+    "lng": 172.3794,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 160,
+    "postcode": "8083",
+    "locality": "Lincoln",
+    "region": "Canterbury",
+    "lat": -43.646,
+    "lng": 172.4926,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 161,
+    "postcode": "8971",
+    "locality": "Darfield",
+    "region": "Canterbury",
+    "lat": -43.4899,
+    "lng": 172.1057,
+    "type": "General",
+    "status": "Active"
+  },
+  {
+    "id": 162,
+    "postcode": "8544",
+    "locality": "Methven",
+    "region": "Canterbury",
+    "lat": -43.6251,
+    "lng": 171.6474,
+    "type": "General",
+    "status": "Active"
+  }
+]
