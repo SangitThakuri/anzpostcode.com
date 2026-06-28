@@ -31,6 +31,16 @@ export default function AUPage() {
       <main>
         <section className="bg-gradient-to-br from-[#0B2545] via-[#112d5e] to-[#0B2545] text-white py-14 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex justify-center mb-6">
+              <div className="inline-flex bg-white/10 rounded-full p-1 gap-1">
+                <Link href="/au" className="px-5 py-2 rounded-full bg-[#E8472A] text-white text-sm font-semibold">
+                  🇦🇺 Australia
+                </Link>
+                <Link href="/nz" className="px-5 py-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 text-sm font-semibold transition-colors">
+                  🇳🇿 New Zealand
+                </Link>
+              </div>
+            </div>
             <div className="text-4xl mb-4">🇦🇺</div>
             <h1 className="font-[family-name:var(--font-sora)] text-3xl sm:text-5xl font-bold mb-4">
               Australian Postcodes

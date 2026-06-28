@@ -45,6 +45,16 @@ export default function NZPage() {
       <main>
         <section className="bg-gradient-to-br from-[#0B2545] to-[#112d5e] text-white py-14 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex justify-center mb-6">
+              <div className="inline-flex bg-white/10 rounded-full p-1 gap-1">
+                <Link href="/au" className="px-5 py-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 text-sm font-semibold transition-colors">
+                  🇦🇺 Australia
+                </Link>
+                <Link href="/nz" className="px-5 py-2 rounded-full bg-[#2D6A4F] text-white text-sm font-semibold">
+                  🇳🇿 New Zealand
+                </Link>
+              </div>
+            </div>
             <div className="text-4xl mb-4">🇳🇿</div>
             <h1 className="font-[family-name:var(--font-sora)] text-3xl sm:text-5xl font-bold mb-4">
               New Zealand Postcodes
