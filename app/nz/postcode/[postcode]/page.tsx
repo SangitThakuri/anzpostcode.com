@@ -11,6 +11,7 @@ import ShareButtons from "@/components/ui/ShareButtons";
 import SearchBox from "@/components/ui/SearchBox";
 import MapWrapper from "@/components/ui/MapWrapper";
 import CopyButton from "@/components/ui/CopyButton";
+import LocationCard from "@/components/ui/LocationCard";
 import {
   getNZPostcodeGroups,
   getNearbyNZPostcodes,
@@ -210,6 +211,16 @@ export default async function NZPostcodePage({ params }: Props) {
                   </div>
                 </div>
               )}
+              {/* Location utilities */}
+              <LocationCard
+                postcode={postcode}
+                primary={primary}
+                state={pg.state}
+                country="nz"
+                lat={hasMap ? pg.lat : undefined}
+                lng={hasMap ? pg.lng : undefined}
+              />
+
               <div className="bg-[#0B2545] rounded-2xl p-5">
                 <h3 className="font-[family-name:var(--font-sora)] font-bold text-white mb-3 text-sm">Search Another Postcode</h3>
                 <SearchBox size="sm" placeholder="Search…" />

@@ -11,6 +11,7 @@ import ShareButtons from "@/components/ui/ShareButtons";
 import MapWrapper from "@/components/ui/MapWrapper";
 import SearchBox from "@/components/ui/SearchBox";
 import CopyButton from "@/components/ui/CopyButton";
+import LocationCard from "@/components/ui/LocationCard";
 import {
   getAUPostcodeGroups,
   getNearbyAUPostcodes,
@@ -268,6 +269,16 @@ export default async function AUPostcodePage({ params }: Props) {
                   </div>
                 </div>
               )}
+
+              {/* Location utilities */}
+              <LocationCard
+                postcode={postcode}
+                primary={primary}
+                state={pg.state}
+                country="au"
+                lat={hasMap ? pg.lat : undefined}
+                lng={hasMap ? pg.lng : undefined}
+              />
 
               {/* Quick search */}
               <div className="bg-[#0B2545] rounded-2xl p-5">
