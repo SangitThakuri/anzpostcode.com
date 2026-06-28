@@ -17,7 +17,7 @@ import {
   getNearbyAUPostcodes,
   getNearbyAULocalities,
 } from "@/lib/data";
-import { stateLabel, titleCase, absoluteUrl } from "@/lib/utils";
+import { stateLabel, titleCase, absoluteUrl, haversineDistance } from "@/lib/utils";
 
 interface Props {
   params: Promise<{ postcode: string }>;
@@ -299,6 +299,12 @@ export default async function AUPostcodePage({ params }: Props) {
                 country="au"
                 lat={hasMap ? pg.lat : undefined}
                 lng={hasMap ? pg.lng : undefined}
+                nearbySuburbs={nearbyLocalities.slice(0, 6).map((l) => ({
+                  name: titleCase(l.locality),
+                  slug: l.slug,
+                  postcode: l.postcodes[0] ?? "",
+                  distanceKm: haversineDistance(pg.lat, pg.lng, l.lat, l.lng),
+                }))}
               />
 
               {/* Quick search */}

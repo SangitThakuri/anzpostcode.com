@@ -12,7 +12,7 @@ import MapWrapper from "@/components/ui/MapWrapper";
 import { MapPin } from "lucide-react";
 import LocationCard from "@/components/ui/LocationCard";
 import { getNZLocalityGroups, getNearbyNZLocalities, getNearbyNZPostcodes } from "@/lib/data";
-import { titleCase, absoluteUrl, slugify } from "@/lib/utils";
+import { titleCase, absoluteUrl, slugify, haversineDistance } from "@/lib/utils";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -201,6 +201,12 @@ export default async function NZLocalityPage({ params }: Props) {
                 country="nz"
                 lat={hasMap ? lg.lat : undefined}
                 lng={hasMap ? lg.lng : undefined}
+                nearbySuburbs={nearbyLocalities.slice(0, 6).map((l) => ({
+                  name: titleCase(l.locality),
+                  slug: l.slug,
+                  postcode: l.postcodes[0] ?? "",
+                  distanceKm: haversineDistance(lg.lat, lg.lng, l.lat, l.lng),
+                }))}
               />
 
               <div className="bg-[#0B2545] rounded-2xl p-5">

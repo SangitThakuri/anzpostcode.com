@@ -15,7 +15,7 @@ import {
   getNearbyAUPostcodes,
 } from "@/lib/data";
 import { MapPin } from "lucide-react";
-import { stateLabel, titleCase, absoluteUrl } from "@/lib/utils";
+import { stateLabel, titleCase, absoluteUrl, haversineDistance } from "@/lib/utils";
 import LocationCard from "@/components/ui/LocationCard";
 
 interface Props {
@@ -215,6 +215,12 @@ export default async function AUSuburbPage({ params }: Props) {
                 country="au"
                 lat={hasMap ? lg.lat : undefined}
                 lng={hasMap ? lg.lng : undefined}
+                nearbySuburbs={nearbyLocalities.slice(0, 6).map((l) => ({
+                  name: titleCase(l.locality),
+                  slug: l.slug,
+                  postcode: l.postcodes[0] ?? "",
+                  distanceKm: haversineDistance(lg.lat, lg.lng, l.lat, l.lng),
+                }))}
               />
 
               <div className="bg-[#0B2545] rounded-2xl p-5">
