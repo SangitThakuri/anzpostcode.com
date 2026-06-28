@@ -9,6 +9,7 @@ import DataDisclaimer from "@/components/ui/DataDisclaimer";
 import ShareButtons from "@/components/ui/ShareButtons";
 import SearchBox from "@/components/ui/SearchBox";
 import MapWrapper from "@/components/ui/MapWrapper";
+import { MapPin } from "lucide-react";
 import { getNZLocalityGroups, getNearbyNZLocalities, getNearbyNZPostcodes } from "@/lib/data";
 import { titleCase, absoluteUrl, slugify } from "@/lib/utils";
 
@@ -121,6 +122,38 @@ export default async function NZLocalityPage({ params }: Props) {
                 <div className="bg-white rounded-2xl border border-[#E2E6ED] p-6">
                   <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545] mb-4">Map of {name}</h2>
                   <MapWrapper lat={lg.lat} lng={lg.lng} label={`${name}, ${lg.state}, NZ`} />
+                  <div className="mt-4 pt-4 border-t border-[#E2E6ED]">
+                    <p className="text-[#6B7280] text-xs uppercase tracking-wider mb-2.5 font-medium">Open in Maps</p>
+                    <div className="flex flex-wrap gap-2">
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${name} ${lg.state} New Zealand`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#F4F6F9] border border-[#E2E6ED] rounded-xl text-sm font-medium text-[#1A1A2E] hover:border-[#4285F4] hover:text-[#4285F4] hover:bg-blue-50 transition-colors"
+                      >
+                        <MapPin className="w-4 h-4" />
+                        Google Maps ↗
+                      </a>
+                      <a
+                        href={`https://maps.apple.com/?q=${encodeURIComponent(`${name} ${lg.state} New Zealand`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#F4F6F9] border border-[#E2E6ED] rounded-xl text-sm font-medium text-[#1A1A2E] hover:border-[#147EFB] hover:text-[#147EFB] hover:bg-blue-50 transition-colors"
+                      >
+                        <MapPin className="w-4 h-4" />
+                        Apple Maps ↗
+                      </a>
+                      <a
+                        href={`https://www.openstreetmap.org/?mlat=${lg.lat}&mlon=${lg.lng}&zoom=14&layers=M`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#F4F6F9] border border-[#E2E6ED] rounded-xl text-sm font-medium text-[#1A1A2E] hover:border-[#2D6A4F] hover:text-[#2D6A4F] transition-colors"
+                      >
+                        <MapPin className="w-4 h-4" />
+                        OpenStreetMap ↗
+                      </a>
+                    </div>
+                  </div>
                 </div>
               )}
 
