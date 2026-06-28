@@ -6,7 +6,25 @@ import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import SearchBox from "@/components/ui/SearchBox";
 import { getNZRegionGroups, getNZPostcodeGroups, getNZLocalityGroups } from "@/lib/data";
-import { slugify } from "@/lib/utils";
+
+const NZ_REGION_EMOJIS: Record<string, string> = {
+  Auckland: "🌆",
+  Wellington: "🏛️",
+  Canterbury: "🏔️",
+  Otago: "🏔️",
+  Waikato: "🌿",
+  "Bay of Plenty": "🏖️",
+  "Manawatu-Whanganui": "🌾",
+  Northland: "🌴",
+  Southland: "❄️",
+  Taranaki: "🌋",
+  Marlborough: "🍷",
+  "Hawke's Bay": "🍎",
+  Gisborne: "☀️",
+  Nelson: "⛵",
+  Tasman: "🏞️",
+  "West Coast": "🌊",
+};
 
 export const metadata: Metadata = {
   title: "New Zealand Postcodes – Browse All Regions & Localities",
@@ -25,7 +43,7 @@ export default function NZPage() {
       <Header />
       <Breadcrumbs items={[{ label: "New Zealand" }]} />
       <main>
-        <section className="bg-gradient-to-br from-[#0B2545] via-[#1a3a2a] to-[#2D6A4F] text-white py-14 sm:py-20">
+        <section className="bg-gradient-to-br from-[#0B2545] to-[#112d5e] text-white py-14 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="text-4xl mb-4">🇳🇿</div>
             <h1 className="font-[family-name:var(--font-sora)] text-3xl sm:text-5xl font-bold mb-4">
@@ -54,10 +72,11 @@ export default function NZPage() {
                 href={`/nz/region/${region.slug}`}
                 className="group bg-white rounded-xl border border-[#E2E6ED] p-6 hover:border-[#2D6A4F] hover:shadow-lg transition-all"
               >
-                <div className="text-3xl mb-3">🇳🇿</div>
+                <div className="text-3xl mb-3">{NZ_REGION_EMOJIS[region.state] ?? "📍"}</div>
                 <div className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545] group-hover:text-[#2D6A4F] transition-colors">
                   {region.state}
                 </div>
+                <div className="text-[#6B7280] text-sm mt-0.5">{region.state} Region</div>
                 <div className="mt-3 flex items-center gap-2 text-xs text-[#6B7280]">
                   <span className="bg-[#F4F6F9] px-2 py-0.5 rounded-full font-medium">
                     {region.postcodes.length} postcodes

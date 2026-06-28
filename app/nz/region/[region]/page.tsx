@@ -51,7 +51,7 @@ export default async function NZRegionPage({ params }: Props) {
       <Header />
       <Breadcrumbs items={[{ label: "New Zealand", href: "/nz" }, { label: rg.state }]} />
       <main>
-        <section className="bg-gradient-to-br from-[#0B2545] via-[#1a3a2a] to-[#2D6A4F] text-white py-12 sm:py-16">
+        <section className="bg-gradient-to-br from-[#0B2545] to-[#112d5e] text-white py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end gap-6">
               <div className="flex-1">

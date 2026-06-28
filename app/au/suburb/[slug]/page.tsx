@@ -16,6 +16,7 @@ import {
 } from "@/lib/data";
 import { MapPin } from "lucide-react";
 import { stateLabel, titleCase, absoluteUrl } from "@/lib/utils";
+import LocationCard from "@/components/ui/LocationCard";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -207,6 +208,15 @@ export default async function AUSuburbPage({ params }: Props) {
                   </div>
                 </div>
               )}
+              <LocationCard
+                postcode={lg.postcodes[0] ?? ""}
+                primary={name}
+                state={lg.state}
+                country="au"
+                lat={hasMap ? lg.lat : undefined}
+                lng={hasMap ? lg.lng : undefined}
+              />
+
               <div className="bg-[#0B2545] rounded-2xl p-5">
                 <h3 className="font-[family-name:var(--font-sora)] font-bold text-white mb-3 text-sm">Search Suburbs</h3>
                 <SearchBox size="sm" placeholder="Search…" />

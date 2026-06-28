@@ -10,6 +10,7 @@ import ShareButtons from "@/components/ui/ShareButtons";
 import SearchBox from "@/components/ui/SearchBox";
 import MapWrapper from "@/components/ui/MapWrapper";
 import { MapPin } from "lucide-react";
+import LocationCard from "@/components/ui/LocationCard";
 import { getNZLocalityGroups, getNearbyNZLocalities, getNearbyNZPostcodes } from "@/lib/data";
 import { titleCase, absoluteUrl, slugify } from "@/lib/utils";
 
@@ -64,7 +65,7 @@ export default async function NZLocalityPage({ params }: Props) {
         ]}
       />
       <main>
-        <section className="bg-gradient-to-br from-[#0B2545] via-[#1a3a2a] to-[#2D6A4F] text-white py-12 sm:py-16">
+        <section className="bg-gradient-to-br from-[#0B2545] to-[#112d5e] text-white py-12 sm:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-start justify-between gap-4">
               <div>
@@ -185,13 +186,23 @@ export default async function NZLocalityPage({ params }: Props) {
                   <div className="flex flex-wrap gap-2">
                     {nearbyPostcodes.map((n) => (
                       <Link key={n.postcode} href={`/nz/postcode/${n.postcode}`}
-                        className="flex items-center gap-1 px-3 py-1.5 bg-[#F4F6F9] border border-[#E2E6ED] rounded-lg hover:border-[#2D6A4F] hover:text-[#2D6A4F] transition-colors text-sm">
+                        className="flex items-center gap-1.5 px-3 py-1.5 bg-[#F4F6F9] border border-[#E2E6ED] rounded-lg hover:border-[#2D6A4F] hover:text-[#2D6A4F] transition-colors text-sm">
                         <span className="font-semibold">{n.postcode}</span>
+                        <span className="text-[#6B7280] text-xs truncate max-w-16">{titleCase(n.localities[0] ?? "")}</span>
                       </Link>
                     ))}
                   </div>
                 </div>
               )}
+              <LocationCard
+                postcode={lg.postcodes[0] ?? ""}
+                primary={name}
+                state={lg.state}
+                country="nz"
+                lat={hasMap ? lg.lat : undefined}
+                lng={hasMap ? lg.lng : undefined}
+              />
+
               <div className="bg-[#0B2545] rounded-2xl p-5">
                 <h3 className="font-[family-name:var(--font-sora)] font-bold text-white mb-3 text-sm">Search NZ Localities</h3>
                 <SearchBox size="sm" placeholder="Search…" />
@@ -199,6 +210,11 @@ export default async function NZLocalityPage({ params }: Props) {
               <div className="bg-white rounded-2xl border border-[#E2E6ED] p-5">
                 <h3 className="font-[family-name:var(--font-sora)] font-bold text-[#0B2545] mb-4 text-sm">Related Links</h3>
                 <ul className="space-y-2 text-sm">
+                  {lg.postcodes.map((pc) => (
+                    <li key={pc}>
+                      <Link href={`/nz/postcode/${pc}`} className="text-[#2D6A4F] hover:underline">Postcode {pc} details</Link>
+                    </li>
+                  ))}
                   <li><Link href={`/nz/region/${slugify(lg.state)}`} className="text-[#2D6A4F] hover:underline">All {lg.state} postcodes</Link></li>
                   <li><Link href="/nz/localities" className="text-[#2D6A4F] hover:underline">Browse all NZ localities</Link></li>
                 </ul>
