@@ -23,7 +23,30 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return Array.from(getAULocalityGroups().keys()).map((slug) => ({ slug }));
+  // Per-state caps keep total file count under Cloudflare Pages' 20,000 file limit.
+  // Lower postcodes (urban) appear first in the data, so rural/obscure slugs drop off last.
+  const STATE_LIMITS: Record<string, number> = {
+    NSW: 4000,
+    VIC: 2800,
+    QLD: 3200,
+    WA: 1800,
+    SA: 1900,
+    TAS: 807,
+    NT: 390,
+    ACT: 170,
+  };
+  const stateCounts: Record<string, number> = {};
+  const result: { slug: string }[] = [];
+  for (const [slug, lg] of getAULocalityGroups().entries()) {
+    const state = lg.state;
+    const limit = STATE_LIMITS[state] ?? 500;
+    stateCounts[state] = stateCounts[state] ?? 0;
+    if (stateCounts[state] < limit) {
+      result.push({ slug });
+      stateCounts[state]++;
+    }
+  }
+  return result;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
