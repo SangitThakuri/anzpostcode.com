@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cloudflare": "next build && find out -name '*.txt' ! -name 'robots.txt' -delete",
     "start": "next start",
     "lint": "eslint"
   },
