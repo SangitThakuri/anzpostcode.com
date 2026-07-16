@@ -24,8 +24,30 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+// Cloudflare Pages hard limit: 20,000 files per deployment.
+// With ~3,600 other pages + ~400 static assets, suburb pages are capped at 15,000.
+// Proportional sampling keeps every state fairly represented.
+const SUBURB_PAGE_LIMIT = 15_000;
+
 export async function generateStaticParams() {
-  return Array.from(getAULocalityGroups().keys()).map((slug) => ({ slug }));
+  const entries = Array.from(getAULocalityGroups().entries());
+  if (entries.length <= SUBURB_PAGE_LIMIT) {
+    return entries.map(([slug]) => ({ slug }));
+  }
+
+  const byState = new Map<string, string[]>();
+  for (const [slug, lg] of entries) {
+    if (!byState.has(lg.state)) byState.set(lg.state, []);
+    byState.get(lg.state)!.push(slug);
+  }
+
+  const selected: string[] = [];
+  for (const slugs of byState.values()) {
+    const keep = Math.round(slugs.length * SUBURB_PAGE_LIMIT / entries.length);
+    selected.push(...slugs.slice(0, keep));
+  }
+
+  return selected.slice(0, SUBURB_PAGE_LIMIT).map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
