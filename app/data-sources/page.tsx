@@ -55,6 +55,14 @@ export default function DataSourcesPage() {
             </div>
           ))}
 
+          <div className="bg-white rounded-2xl border border-[#E2E6ED] p-6 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="font-[family-name:var(--font-sora)] text-base font-bold text-[#0B2545] mb-1">Data Last Updated</h2>
+              <p className="text-[#6B7280] text-sm">January 2025 — all AU and NZ postcode datasets.</p>
+            </div>
+            <div className="text-2xl font-bold font-[family-name:var(--font-sora)] text-[#E8472A]">Jan 2025</div>
+          </div>
+
           <div className="bg-[#F4F6F9] rounded-2xl border border-[#E2E6ED] p-6">
             <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545] mb-3">Reporting Data Issues</h2>
             <p className="text-[#6B7280] text-sm leading-relaxed">

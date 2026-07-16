@@ -86,8 +86,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const blog_pages = [
+    "/blog",
+    "/blog/how-australian-postcodes-work",
+    "/blog/major-city-postcodes-australia",
+    "/blog/nz-postcode-guide",
+    "/blog/postcode-vs-suburb",
+    "/blog/find-your-postcode",
+  ].map((path) => ({
+    url: `${BASE}${path}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.65,
+  }));
+
   return [
     ...static_pages,
+    ...blog_pages,
     ...au_states,
     ...au_ranges,
     ...au_postcodes,

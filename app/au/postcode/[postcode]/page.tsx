@@ -12,6 +12,8 @@ import MapWrapper from "@/components/ui/MapWrapper";
 import SearchBox from "@/components/ui/SearchBox";
 import CopyButton from "@/components/ui/CopyButton";
 import LocationCard from "@/components/ui/LocationCard";
+import DistanceCalculator from "@/components/ui/DistanceCalculator";
+import SaveToRecents from "@/components/ui/SaveToRecents";
 import {
   getAUPostcodeGroups,
   getNearbyAUPostcodes,
@@ -89,6 +91,7 @@ export default async function AUPostcodePage({ params }: Props) {
 
   return (
     <>
+      <SaveToRecents label={`${primary}, ${pg.state} ${postcode}`} url={`/au/postcode/${postcode}`} postcode={postcode} country="au" />
       <Header />
       <Breadcrumbs
         items={[
@@ -129,11 +132,19 @@ export default async function AUPostcodePage({ params }: Props) {
                   <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545]">
                     Postcode Details
                   </h2>
-                  <CopyButton
-                    text={`Postcode ${postcode}\n${pg.localities.map(titleCase).join(", ")}\n${stName} (${pg.state}), Australia`}
-                    label="Copy address"
-                    className="text-[#6B7280] hover:text-[#1A1A2E]"
-                  />
+                  <div className="flex items-center gap-2">
+                    <CopyButton
+                      text={`Postcode ${postcode}\n${pg.localities.map(titleCase).join(", ")}\n${stName} (${pg.state}), Australia`}
+                      label="Copy address"
+                      className="text-[#6B7280] hover:text-[#1A1A2E]"
+                    />
+                    <button
+                      onClick={() => window.print()}
+                      className="no-print text-xs text-[#6B7280] hover:text-[#1A1A2E] flex items-center gap-1 border border-[#E2E6ED] rounded-lg px-2.5 py-1.5 hover:border-[#1A1A2E] transition-colors"
+                    >
+                      🖨 Print
+                    </button>
+                  </div>
                 </div>
                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
                   {[
@@ -232,6 +243,11 @@ export default async function AUPostcodePage({ params }: Props) {
                   </h2>
                   <MapWrapper lat={pg.lat} lng={pg.lng} label={`Postcode ${postcode} – ${primary}`} />
                 </div>
+              )}
+
+              {/* Distance calculator */}
+              {hasMap && (
+                <DistanceCalculator lat={pg.lat} lng={pg.lng} label={`${primary} ${postcode}`} />
               )}
 
               {/* Nearby localities */}

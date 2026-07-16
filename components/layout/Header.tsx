@@ -41,6 +41,12 @@ export default function Header() {
               <Search className="w-3.5 h-3.5" />
               Search
             </Link>
+            <Link
+              href="/blog"
+              className="text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Guides
+            </Link>
           </nav>
 
           {/* CTA */}
@@ -106,6 +112,13 @@ export default function Header() {
               className="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium"
             >
               Browse NZ Postcodes
+            </Link>
+            <Link
+              href="/blog"
+              onClick={() => setOpen(false)}
+              className="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              📖 Guides
             </Link>
           </div>
         )}

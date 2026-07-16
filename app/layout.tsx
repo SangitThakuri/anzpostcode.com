@@ -26,14 +26,33 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     siteName: "ANZ Postcode",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "ANZ Postcode – Australia & New Zealand Postcode Directory",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og-image.svg"],
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "ANZ Postcode",
+  url: "https://anzpostcode.com",
+  logo: "https://anzpostcode.com/og-image.svg",
+  description: "Free Australia and New Zealand postcode directory covering 18,000+ AU postcodes and 150+ NZ postcodes.",
+  contactPoint: { "@type": "ContactPoint", contactType: "customer support", url: "https://anzpostcode.com/contact" },
 };
 
 export default function RootLayout({
@@ -43,7 +62,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col antialiased">{children}</body>
+      <body className="min-h-full flex flex-col antialiased">
+        {children}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
+      </body>
     </html>
   );
 }

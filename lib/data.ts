@@ -238,6 +238,8 @@ export interface SearchItem {
   state: string;
   country: "au" | "nz";
   slug: string;
+  lat: number;
+  lng: number;
 }
 
 let _searchIndex: SearchItem[] | null = null;
@@ -252,6 +254,8 @@ export function getSearchIndex(): SearchItem[] {
       state: r.state,
       country: "au",
       slug: slugify(`${r.locality}-${r.state}`),
+      lat: r.lat,
+      lng: r.lng,
     });
   }
   for (const r of nzData) {
@@ -261,6 +265,8 @@ export function getSearchIndex(): SearchItem[] {
       state: r.region,
       country: "nz",
       slug: slugify(`${r.locality}-${r.region}`),
+      lat: r.lat,
+      lng: r.lng,
     });
   }
   _searchIndex = items;
