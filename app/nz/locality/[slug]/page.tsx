@@ -11,6 +11,8 @@ import SearchBox from "@/components/ui/SearchBox";
 import MapWrapper from "@/components/ui/MapWrapper";
 import { MapPin } from "lucide-react";
 import LocationCard from "@/components/ui/LocationCard";
+import DistanceCalculator from "@/components/ui/DistanceCalculator";
+import SaveToRecents from "@/components/ui/SaveToRecents";
 import { getNZLocalityGroups, getNearbyNZLocalities, getNearbyNZPostcodes } from "@/lib/data";
 import { titleCase, absoluteUrl, slugify, haversineDistance } from "@/lib/utils";
 
@@ -56,6 +58,7 @@ export default async function NZLocalityPage({ params }: Props) {
 
   return (
     <>
+      <SaveToRecents label={`${name}, ${lg.state} ${lg.postcodes[0]}`} url={`/nz/locality/${slug}`} postcode={lg.postcodes[0] ?? ""} country="nz" />
       <Header />
       <Breadcrumbs
         items={[
@@ -156,6 +159,10 @@ export default async function NZLocalityPage({ params }: Props) {
                     </div>
                   </div>
                 </div>
+              )}
+
+              {hasMap && (
+                <DistanceCalculator lat={lg.lat} lng={lg.lng} label={`${name} ${lg.postcodes[0]}`} />
               )}
 
               {nearbyLocalities.length > 0 && (

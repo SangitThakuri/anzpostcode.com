@@ -12,6 +12,8 @@ import SearchBox from "@/components/ui/SearchBox";
 import MapWrapper from "@/components/ui/MapWrapper";
 import CopyButton from "@/components/ui/CopyButton";
 import LocationCard from "@/components/ui/LocationCard";
+import DistanceCalculator from "@/components/ui/DistanceCalculator";
+import SaveToRecents from "@/components/ui/SaveToRecents";
 import {
   getNZPostcodeGroups,
   getNearbyNZPostcodes,
@@ -80,6 +82,7 @@ export default async function NZPostcodePage({ params }: Props) {
 
   return (
     <>
+      <SaveToRecents label={`${primary}, ${pg.state} ${postcode}`} url={`/nz/postcode/${postcode}`} postcode={postcode} country="nz" />
       <Header />
       <Breadcrumbs
         items={[
@@ -195,6 +198,10 @@ export default async function NZPostcodePage({ params }: Props) {
                   <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545] mb-4">Map</h2>
                   <MapWrapper lat={pg.lat} lng={pg.lng} label={`NZ Postcode ${postcode} – ${primary}`} />
                 </div>
+              )}
+
+              {hasMap && (
+                <DistanceCalculator lat={pg.lat} lng={pg.lng} label={`${primary} ${postcode}`} />
               )}
 
               {nearbyLocalities.length > 0 && (

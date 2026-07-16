@@ -17,6 +17,8 @@ import {
 import { MapPin } from "lucide-react";
 import { stateLabel, titleCase, absoluteUrl, haversineDistance } from "@/lib/utils";
 import LocationCard from "@/components/ui/LocationCard";
+import DistanceCalculator from "@/components/ui/DistanceCalculator";
+import SaveToRecents from "@/components/ui/SaveToRecents";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -75,6 +77,7 @@ export default async function AUSuburbPage({ params }: Props) {
 
   return (
     <>
+      <SaveToRecents label={`${name}, ${lg.state} ${lg.postcodes[0]}`} url={`/au/suburb/${slug}`} postcode={lg.postcodes[0] ?? ""} country="au" />
       <Header />
       <Breadcrumbs
         items={[
@@ -183,6 +186,10 @@ export default async function AUSuburbPage({ params }: Props) {
                     </div>
                   </div>
                 </div>
+              )}
+
+              {hasMap && (
+                <DistanceCalculator lat={lg.lat} lng={lg.lng} label={`${name} ${lg.postcodes[0]}`} />
               )}
 
               {nearbyLocalities.length > 0 && (
