@@ -8,8 +8,10 @@ import { getAUPostcodeGroups, getAUStateGroups } from "@/lib/data";
 import { stateLabel, titleCase } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "All Australian Postcodes – Complete List",
-  description: "Browse the complete list of Australian postcodes. Search by postcode number, suburb name, or state.",
+  title: "All Australian Postcodes – Complete List of 3,175+ AU Postcodes",
+  description: "Browse the complete list of all Australian postcodes by state and suburb. Find any NSW, VIC, QLD, SA, WA, TAS, NT, or ACT postcode instantly.",
+  openGraph: { locale: "en_AU", url: "https://anzpostcode.com/au/postcodes" },
+  alternates: { canonical: "https://anzpostcode.com/au/postcodes" },
 };
 
 export default function AUPostcodesPage() {

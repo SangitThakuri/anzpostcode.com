@@ -12,6 +12,7 @@ const auData: AUPostcode[] = (auRaw as any[]).map((r) => ({
   lng: Number(r.long ?? r.lng) || 0,
   type: r.type ?? "",
   status: r.status ?? "",
+  lgaregion: r.lgaregion ?? "",
 })).filter((r) => r.state && r.locality);
 
 const nzData: NZPostcode[] = (nzRaw as any[]).map((r) => ({
@@ -63,10 +64,12 @@ export function getAULocalityGroups(): Map<string, LocalityGroup> {
         country: "au",
         lat: r.lat,
         lng: r.lng,
+        lgaregion: r.lgaregion || undefined,
       });
     }
     const g = map.get(slug)!;
     if (!g.postcodes.includes(r.postcode)) g.postcodes.push(r.postcode);
+    if (!g.lgaregion && r.lgaregion) g.lgaregion = r.lgaregion;
   }
   return map;
 }

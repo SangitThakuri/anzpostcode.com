@@ -34,12 +34,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!pg) return {};
   const primary = titleCase(pg.localities[0] ?? "");
   const stName = stateLabel(pg.state);
+  const suburbCount = pg.localities.length;
   return {
-    title: `Postcode ${postcode} – ${primary}, ${pg.state}`,
-    description: `Postcode ${postcode} covers ${pg.localities.map(titleCase).join(", ")} in ${stName}, Australia. View map, nearby postcodes, and local suburbs.`,
+    title: `Postcode ${postcode} – ${primary}, ${pg.state}, Australia`,
+    description: `Postcode ${postcode} covers ${suburbCount} suburb${suburbCount > 1 ? "s" : ""} in ${stName}: ${pg.localities.map(titleCase).join(", ")}. View interactive map, nearby postcodes, and full location details.`,
     openGraph: {
-      title: `Postcode ${postcode} – ${primary}, ${pg.state}`,
+      title: `Postcode ${postcode} – ${primary}, ${pg.state}, Australia`,
       url: absoluteUrl(`/au/postcode/${postcode}`),
+      locale: "en_AU",
     },
     alternates: { canonical: absoluteUrl(`/au/postcode/${postcode}`) },
   };

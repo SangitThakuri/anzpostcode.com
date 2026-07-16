@@ -7,6 +7,7 @@ export interface AUPostcode {
   lng: number;
   type: string;
   status: string;
+  lgaregion: string;
 }
 
 export interface NZPostcode {
@@ -39,6 +40,7 @@ export interface LocalityGroup {
   country: Country;
   lat: number;
   lng: number;
+  lgaregion?: string;
 }
 
 export interface StateGroup {

@@ -8,8 +8,10 @@ import { getAULocalityGroups } from "@/lib/data";
 import { titleCase } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "All Australian Suburbs – Complete Directory",
-  description: "Browse all Australian suburbs and localities. Find the postcode for any suburb in NSW, VIC, QLD, SA, WA, TAS, NT, and ACT.",
+  title: "All Australian Suburbs – Complete Suburb & Postcode Directory",
+  description: "Browse all 17,500+ Australian suburbs and localities with their postcodes. Find the postcode for any suburb in NSW, VIC, QLD, SA, WA, TAS, NT, and ACT.",
+  openGraph: { locale: "en_AU", url: "https://anzpostcode.com/au/suburbs" },
+  alternates: { canonical: "https://anzpostcode.com/au/suburbs" },
 };
 
 export default function AUSuburbsPage() {

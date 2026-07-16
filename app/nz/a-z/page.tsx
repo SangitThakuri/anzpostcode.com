@@ -7,8 +7,10 @@ import { getNZLocalityGroups } from "@/lib/data";
 import { titleCase } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "New Zealand Postcodes A–Z Index",
-  description: "Alphabetical index of all New Zealand localities with their postcodes.",
+  title: "New Zealand Localities A–Z Index – All NZ Postcodes Alphabetically",
+  description: "Alphabetical A–Z index of all New Zealand localities and suburbs with their postcodes. Browse Auckland, Wellington, Christchurch, and all NZ regions by letter.",
+  openGraph: { locale: "en_NZ", url: "https://anzpostcode.com/nz/a-z" },
+  alternates: { canonical: "https://anzpostcode.com/nz/a-z" },
 };
 
 export default function NZAZPage() {

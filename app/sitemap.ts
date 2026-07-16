@@ -12,8 +12,11 @@ import {
 
 const BASE = "https://anzpostcode.com";
 
+// Fixed data snapshot date — update when dataset is refreshed
+const DATA_DATE = "2025-01-01T00:00:00.000Z";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date().toISOString();
+  const now = DATA_DATE;
 
   const static_pages: MetadataRoute.Sitemap = [
     { url: BASE, lastModified: now, changeFrequency: "weekly", priority: 1 },
@@ -76,9 +79,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const au_ranges = ["0","1","2","3","4","5","6","7","8","9"].map((prefix) => ({
+    url: `${BASE}/au/postcodes/range/${prefix}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...static_pages,
     ...au_states,
+    ...au_ranges,
     ...au_postcodes,
     ...au_suburbs,
     ...nz_regions,

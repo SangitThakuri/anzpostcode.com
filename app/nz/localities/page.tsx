@@ -8,8 +8,10 @@ import { getNZLocalityGroups } from "@/lib/data";
 import { titleCase } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "All New Zealand Localities – Complete Directory",
-  description: "Browse all New Zealand localities and find their postcodes.",
+  title: "All New Zealand Localities – Complete NZ Locality & Postcode Directory",
+  description: "Browse all New Zealand localities and suburbs with their postcodes. Find postcode for any NZ locality across Auckland, Wellington, Christchurch, and all regions.",
+  openGraph: { locale: "en_NZ", url: "https://anzpostcode.com/nz/localities" },
+  alternates: { canonical: "https://anzpostcode.com/nz/localities" },
 };
 
 export default function NZLocalitiesPage() {

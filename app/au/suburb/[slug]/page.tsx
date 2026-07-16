@@ -32,10 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!lg) return {};
   const name = titleCase(lg.locality);
   const stName = stateLabel(lg.state);
+  const pcList = lg.postcodes.join(", ");
   return {
-    title: `${name} Postcode – ${lg.postcodes.join(", ")}, ${lg.state}`,
-    description: `${name} is a suburb in ${stName}, Australia with postcode${lg.postcodes.length > 1 ? "s" : ""} ${lg.postcodes.join(", ")}. View map, nearby suburbs, and location details.`,
-    openGraph: { title: `${name} Postcode`, url: absoluteUrl(`/au/suburb/${slug}`) },
+    title: `${name} Postcode ${lg.postcodes[0]} – ${name}, ${lg.state}, Australia`,
+    description: `${name} is a suburb in ${stName}, Australia. Postcode${lg.postcodes.length > 1 ? "s" : ""}: ${pcList}${lg.lgaregion ? `. Council area: ${lg.lgaregion}` : ""}. View interactive map, nearby suburbs, and full location details.`,
+    openGraph: { title: `${name} Postcode – ${pcList}, ${lg.state}`, url: absoluteUrl(`/au/suburb/${slug}`), locale: "en_AU" },
     alternates: { canonical: absoluteUrl(`/au/suburb/${slug}`) },
   };
 }
@@ -52,12 +53,24 @@ export default async function AUSuburbPage({ params }: Props) {
   const nearbyPostcodes = getNearbyAUPostcodes(lg.lat, lg.lng, lg.postcodes[0] ?? "");
   const pageUrl = absoluteUrl(`/au/suburb/${slug}`);
 
+  const nearbyNames = nearbyLocalities.slice(0, 5).map((l) => titleCase(l.locality));
   const faqs = [
-    { question: `What is the postcode of ${name}?`, answer: `${name} has postcode${lg.postcodes.length > 1 ? "s" : ""} ${lg.postcodes.join(", ")}.` },
+    { question: `What is the postcode of ${name}?`, answer: `${name} has postcode${lg.postcodes.length > 1 ? "s" : ""} ${lg.postcodes.join(", ")} in ${stName}, Australia.` },
     { question: `Which state is ${name} in?`, answer: `${name} is in ${stName} (${lg.state}), Australia.` },
-    { question: `What suburbs are near ${name}?`, answer: nearbyLocalities.length > 0 ? `Nearby suburbs include ${nearbyLocalities.slice(0, 5).map((l) => titleCase(l.locality)).join(", ")}.` : `Use the search to find suburbs near ${name}.` },
-    { question: `Where is ${name} located?`, answer: `${name} is a suburb located in ${stName}, Australia${hasMap ? ` at approximately ${lg.lat.toFixed(4)}°, ${lg.lng.toFixed(4)}°` : ""}.` },
-    { question: `Is this postcode information official?`, answer: `This data is community-sourced for general reference. For official delivery verification, please check Australia Post.` },
+    {
+      question: `What suburbs are near ${name}?`,
+      answer: nearbyNames.length > 0
+        ? `Suburbs near ${name} include ${nearbyNames.join(", ")}. Use the search box to explore all nearby areas in ${stName}.`
+        : `Use the search to find suburbs near ${name} in ${stName}.`,
+    },
+    { question: `Where is ${name} located?`, answer: `${name} is located in ${stName}, Australia${hasMap ? ` at approximately ${lg.lat.toFixed(4)}°S, ${lg.lng.toFixed(4)}°E` : ""}. It is part of the ${stName} postcode system.` },
+    {
+      question: `What council area is ${name} in?`,
+      answer: lg.lgaregion
+        ? `${name} is in the ${lg.lgaregion} local government area (council area) in ${stName}.`
+        : `${name} is a suburb in ${stName}, Australia. Council area information may vary — check your local council website for official boundaries.`,
+    },
+    { question: `Is this postcode information official?`, answer: `This data is community-sourced for general reference only. For official delivery address verification, please consult the relevant postal authority.` },
   ];
 
   return (
@@ -175,14 +188,20 @@ export default async function AUSuburbPage({ params }: Props) {
               {nearbyLocalities.length > 0 && (
                 <div className="bg-white rounded-2xl border border-[#E2E6ED] p-6">
                   <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545] mb-4">Nearby Suburbs</h2>
-                  <div className="flex flex-wrap gap-2">
+                  <ul className="flex flex-wrap gap-2 list-none">
                     {nearbyLocalities.map((l) => (
-                      <Link key={l.slug} href={`/au/suburb/${l.slug}`}
-                        className="px-3 py-1.5 bg-[#F4F6F9] border border-[#E2E6ED] text-[#1A1A2E] text-sm rounded-lg hover:border-[#E8472A] hover:text-[#E8472A] transition-colors">
-                        {titleCase(l.locality)}
-                      </Link>
+                      <li key={l.slug}>
+                        <Link
+                          href={`/au/suburb/${l.slug}`}
+                          title={`${titleCase(l.locality)} postcode – ${l.postcodes[0]}, ${l.state}`}
+                          className="px-3 py-1.5 bg-[#F4F6F9] border border-[#E2E6ED] text-[#1A1A2E] text-sm rounded-lg hover:border-[#E8472A] hover:text-[#E8472A] transition-colors flex items-center gap-1.5"
+                        >
+                          {titleCase(l.locality)}
+                          <span className="text-[#6B7280] text-xs">{l.postcodes[0]}</span>
+                        </Link>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               )}
 

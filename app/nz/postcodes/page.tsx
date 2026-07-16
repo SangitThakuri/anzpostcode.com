@@ -8,8 +8,10 @@ import { getNZPostcodeGroups, getNZRegionGroups } from "@/lib/data";
 import { titleCase } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "All New Zealand Postcodes – Complete List",
-  description: "Browse all New Zealand postcodes by region. Complete NZ postcode directory.",
+  title: "All New Zealand Postcodes – Complete NZ Postcode Directory",
+  description: "Browse all New Zealand postcodes by region. Find any NZ postcode for Auckland, Wellington, Christchurch, and all NZ regions. Free comprehensive postcode directory.",
+  openGraph: { locale: "en_NZ", url: "https://anzpostcode.com/nz/postcodes" },
+  alternates: { canonical: "https://anzpostcode.com/nz/postcodes" },
 };
 
 export default function NZPostcodesPage() {

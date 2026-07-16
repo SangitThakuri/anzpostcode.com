@@ -32,10 +32,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pg = getNZPostcodeGroups().get(postcode);
   if (!pg) return {};
   const primary = titleCase(pg.localities[0] ?? "");
+  const locCount = pg.localities.length;
   return {
-    title: `Postcode ${postcode} – ${primary}, ${pg.state}, New Zealand`,
-    description: `NZ postcode ${postcode} covers ${pg.localities.map(titleCase).join(", ")} in the ${pg.state} region. View map and nearby localities.`,
-    openGraph: { title: `NZ Postcode ${postcode}`, url: absoluteUrl(`/nz/postcode/${postcode}`) },
+    title: `NZ Postcode ${postcode} – ${primary}, ${pg.state}, New Zealand`,
+    description: `New Zealand postcode ${postcode} covers ${locCount} localit${locCount > 1 ? "ies" : "y"}: ${pg.localities.map(titleCase).join(", ")} in the ${pg.state} region. View interactive map and nearby localities.`,
+    openGraph: { title: `NZ Postcode ${postcode} – ${primary}, ${pg.state}`, url: absoluteUrl(`/nz/postcode/${postcode}`), locale: "en_NZ" },
     alternates: { canonical: absoluteUrl(`/nz/postcode/${postcode}`) },
   };
 }

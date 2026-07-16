@@ -7,8 +7,10 @@ import { getAULocalityGroups, getAUPostcodeGroups } from "@/lib/data";
 import { titleCase } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Australian Postcodes A–Z Index",
-  description: "Alphabetical index of all Australian suburbs and localities with their postcodes.",
+  title: "Australian Suburbs A–Z Index – All Postcodes Alphabetically",
+  description: "Alphabetical A–Z index of all 17,500+ Australian suburbs and localities with their postcodes. Browse NSW, VIC, QLD, SA, WA, TAS, NT, and ACT suburbs by letter.",
+  openGraph: { locale: "en_AU", url: "https://anzpostcode.com/au/a-z" },
+  alternates: { canonical: "https://anzpostcode.com/au/a-z" },
 };
 
 export default function AUAZPage() {
