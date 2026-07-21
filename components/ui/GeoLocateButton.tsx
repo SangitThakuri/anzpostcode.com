@@ -20,7 +20,7 @@ export default function GeoLocateButton({ country = "both", className = "" }: Pr
     setStatus("loading");
     navigator.geolocation.getCurrentPosition(
       async ({ coords }) => {
-        const { lat, longitude: lng } = coords;
+        const { latitude: lat, longitude: lng } = coords;
         const { getSearchIndex } = await import("@/lib/data");
         const index = getSearchIndex();
 
