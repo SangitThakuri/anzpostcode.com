@@ -110,7 +110,7 @@ export default function HomePage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-4 pt-2">
           <div className="flex flex-wrap items-center justify-between gap-3 bg-white border border-[#E2E6ED] rounded-2xl px-5 py-3">
             <p className="text-[#6B7280] text-sm">
-              📅 Data last updated: <span className="font-medium text-[#1A1A2E]">January 2025</span> · Covers AU and NZ postal data
+              📅 Data last updated: <span className="font-medium text-[#1A1A2E]">2025</span> · Covers AU and NZ postal data
             </p>
             <a href="/blog" className="text-[#E8472A] text-sm font-medium hover:underline">
               Read our postcode guides →

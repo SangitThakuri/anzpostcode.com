@@ -1,10 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import SearchBox from "@/components/ui/SearchBox";
+import GeoLocateButton from "@/components/ui/GeoLocateButton";
 import type { StateGroup, PostcodeGroup } from "@/types";
 import { stateLabel, titleCase } from "@/lib/utils";
+
+interface RecentItem { label: string; url: string; postcode: string; country: string; }
+
 
 const AU_STATE_FLAGS: Record<string, string> = {
   NSW: "🏙️", VIC: "🏙️", QLD: "☀️", SA: "🌾", WA: "🏜️", TAS: "🌿", NT: "🌵", ACT: "🏛️",
@@ -49,7 +53,15 @@ export default function HomeContent({
   auSuburbCount,
 }: Props) {
   const [country, setCountry] = useState<"au" | "nz">("au");
+  const [recents, setRecents] = useState<RecentItem[]>([]);
   const isAU = country === "au";
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("anz_recents");
+      if (stored) setRecents(JSON.parse(stored).slice(0, 5));
+    } catch {}
+  }, []);
 
   const auHints = ["2000", "Sydney", "Melbourne", "Brisbane", "3000", "Perth"];
   const nzHints = ["1010", "Auckland", "Wellington", "9016", "Christchurch", "Dunedin"];
@@ -141,6 +153,9 @@ export default function HomeContent({
                   {hint}
                 </Link>
               ))}
+            </div>
+            <div className="flex justify-center mt-5">
+              <GeoLocateButton country={isAU ? "au" : "nz"} />
             </div>
           </div>
         </div>
@@ -244,11 +259,6 @@ export default function HomeContent({
                 key={pg.postcode}
                 href={isAU ? `/au/postcode/${pg.postcode}` : `/nz/postcode/${pg.postcode}`}
                 className="group bg-[#F4F6F9] hover:bg-white border border-[#E2E6ED] rounded-xl p-4 transition-all hover:shadow-md"
-                style={
-                  isAU
-                    ? ({ "--hover-border": "#E8472A" } as React.CSSProperties)
-                    : ({ "--hover-border": "#2D6A4F" } as React.CSSProperties)
-                }
               >
                 <div
                   className="font-[family-name:var(--font-sora)] text-2xl font-bold"
@@ -267,6 +277,30 @@ export default function HomeContent({
           </div>
         </div>
       </section>
+
+      {/* ── Recently Viewed ───────────────────────────────────────────── */}
+      {recents.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="flex items-center gap-2 mb-5">
+            <Clock className="w-4 h-4 text-[#6B7280]" />
+            <h2 className="font-[family-name:var(--font-sora)] text-lg font-bold text-[#0B2545]">
+              Recently Viewed
+            </h2>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {recents.map((r) => (
+              <Link
+                key={r.url}
+                href={r.url}
+                className="flex items-center gap-2 px-4 py-2.5 bg-white border border-[#E2E6ED] rounded-xl hover:border-[#E8472A] hover:text-[#E8472A] transition-colors text-sm"
+              >
+                <span className="text-base">{r.country === "au" ? "🇦🇺" : "🇳🇿"}</span>
+                <span className="font-medium text-[#1A1A2E]">{r.label}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 }

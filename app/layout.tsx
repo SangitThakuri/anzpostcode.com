@@ -23,6 +23,13 @@ export const metadata: Metadata = {
   description:
     "Find Australian and New Zealand postcodes, suburbs, and localities. Search postcodes, explore by state or region, and discover nearby areas.",
   metadataBase: new URL("https://anzpostcode.com"),
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_AU",

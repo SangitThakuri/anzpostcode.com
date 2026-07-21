@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { MapPin, Menu, X, Search } from "lucide-react";
+import { MapPin, Menu, X, Search, Navigation, ArrowLeftRight } from "lucide-react";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -40,6 +40,20 @@ export default function Header() {
             >
               <Search className="w-3.5 h-3.5" />
               Search
+            </Link>
+            <Link
+              href="/near-me"
+              className="text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1"
+            >
+              <Navigation className="w-3.5 h-3.5" />
+              Near Me
+            </Link>
+            <Link
+              href="/au/compare"
+              className="text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-1"
+            >
+              <ArrowLeftRight className="w-3.5 h-3.5" />
+              Compare
             </Link>
             <Link
               href="/blog"
@@ -112,6 +126,20 @@ export default function Header() {
               className="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium"
             >
               Browse NZ Postcodes
+            </Link>
+            <Link
+              href="/near-me"
+              onClick={() => setOpen(false)}
+              className="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              📍 Find My Postcode
+            </Link>
+            <Link
+              href="/au/compare"
+              onClick={() => setOpen(false)}
+              className="block text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium"
+            >
+              ⇄ Compare Postcodes
             </Link>
             <Link
               href="/blog"
