@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const sora = Sora({
@@ -62,6 +63,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sora.variable} ${inter.variable} h-full`}>
+      <head>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-XZJ95QXT2T" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XZJ95QXT2T');
+        `}</Script>
+      </head>
       <body className="min-h-full flex flex-col antialiased">
         {children}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
