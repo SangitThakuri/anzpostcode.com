@@ -16,6 +16,13 @@ export default function NearMePage() {
     <>
       <Header />
       <Breadcrumbs items={[{ label: "Find My Postcode" }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://anzpostcode.com" },
+          { "@type": "ListItem", position: 2, name: "Find My Postcode", item: "https://anzpostcode.com/near-me" },
+        ],
+      }) }} />
       <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-10">
           <div className="w-16 h-16 bg-[#E8472A] rounded-2xl flex items-center justify-center mx-auto mb-5">

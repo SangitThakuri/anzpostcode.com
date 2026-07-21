@@ -86,22 +86,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const blog_pages = [
-    "/blog",
-    "/blog/how-australian-postcodes-work",
-    "/blog/major-city-postcodes-australia",
-    "/blog/nz-postcode-guide",
-    "/blog/postcode-vs-suburb",
-    "/blog/find-your-postcode",
-  ].map((path) => ({
-    url: `${BASE}${path}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.65,
-  }));
+  const blog_pages: MetadataRoute.Sitemap = [
+    { url: `${BASE}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.65 },
+    { url: `${BASE}/blog/how-australian-postcodes-work`, lastModified: "2025-01-15T00:00:00.000Z", changeFrequency: "yearly", priority: 0.65 },
+    { url: `${BASE}/blog/major-city-postcodes-australia`, lastModified: "2025-02-01T00:00:00.000Z", changeFrequency: "yearly", priority: 0.65 },
+    { url: `${BASE}/blog/nz-postcode-guide`, lastModified: "2025-02-15T00:00:00.000Z", changeFrequency: "yearly", priority: 0.65 },
+    { url: `${BASE}/blog/postcode-vs-suburb`, lastModified: "2025-03-01T00:00:00.000Z", changeFrequency: "yearly", priority: 0.65 },
+    { url: `${BASE}/blog/find-your-postcode`, lastModified: "2025-03-15T00:00:00.000Z", changeFrequency: "yearly", priority: 0.65 },
+  ];
+
+  const tool_pages: MetadataRoute.Sitemap = [
+    { url: `${BASE}/near-me`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/au/compare`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+  ];
 
   return [
     ...static_pages,
+    ...tool_pages,
     ...blog_pages,
     ...au_states,
     ...au_ranges,

@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "Major City Postcodes in Australia – CBD Postcodes for Every Capital",
   description: "Quick reference for Australian CBD postcodes: Sydney 2000, Melbourne 3000, Brisbane 4000, Adelaide 5000, Perth 6000, Hobart 7000, Darwin 0800, Canberra 2601.",
   alternates: { canonical: "https://anzpostcode.com/blog/major-city-postcodes-australia" },
-  openGraph: { locale: "en_AU", url: "https://anzpostcode.com/blog/major-city-postcodes-australia" },
+  openGraph: { type: "article", locale: "en_AU", url: "https://anzpostcode.com/blog/major-city-postcodes-australia", publishedTime: "2025-02-01T00:00:00.000Z", modifiedTime: "2025-02-01T00:00:00.000Z", authors: ["https://anzpostcode.com/about"], tags: ["postcodes", "Australia", "cities", "CBD"] },
 };
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Major City Postcodes in Australia",
-  datePublished: "2025-01-01",
-  dateModified: "2025-01-01",
-  author: { "@type": "Organization", name: "ANZ Postcode" },
-  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  datePublished: "2025-02-01",
+  dateModified: "2025-02-01",
+  author: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com", logo: { "@type": "ImageObject", url: "https://anzpostcode.com/og-image.svg" } },
+  url: "https://anzpostcode.com/blog/major-city-postcodes-australia",
+  mainEntityOfPage: "https://anzpostcode.com/blog/major-city-postcodes-australia",
+  image: "https://anzpostcode.com/og-image.svg",
 };
 
 const cities = [

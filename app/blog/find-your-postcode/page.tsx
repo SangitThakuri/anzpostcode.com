@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "How to Find Your Postcode in Australia – 5 Easy Methods",
   description: "Not sure of your Australian postcode? Here are 5 fast and free ways to look it up — including our instant suburb search, geolocation, and A-Z index.",
   alternates: { canonical: "https://anzpostcode.com/blog/find-your-postcode" },
-  openGraph: { locale: "en_AU", url: "https://anzpostcode.com/blog/find-your-postcode" },
+  openGraph: { type: "article", locale: "en_AU", url: "https://anzpostcode.com/blog/find-your-postcode", publishedTime: "2025-03-15T00:00:00.000Z", modifiedTime: "2025-03-15T00:00:00.000Z", authors: ["https://anzpostcode.com/about"], tags: ["postcodes", "Australia", "how-to"] },
 };
 
 const articleSchema = {
@@ -16,6 +16,10 @@ const articleSchema = {
   "@type": "HowTo",
   name: "How to Find Your Postcode in Australia",
   description: "5 methods to find any Australian postcode for free.",
+  datePublished: "2025-03-15",
+  dateModified: "2025-03-15",
+  author: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com", logo: { "@type": "ImageObject", url: "https://anzpostcode.com/og-image.svg" } },
   step: [
     { "@type": "HowToStep", name: "Search by suburb name", text: "Type your suburb name into the search box at ANZPostcode.com to instantly find its postcode." },
     { "@type": "HowToStep", name: "Use the Near Me feature", text: "Click the location icon to find postcodes near your current GPS location." },

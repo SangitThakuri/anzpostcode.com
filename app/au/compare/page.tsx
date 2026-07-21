@@ -22,6 +22,14 @@ export default function ComparePage() {
           { label: "Compare Postcodes" },
         ]}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://anzpostcode.com" },
+          { "@type": "ListItem", position: 2, name: "Australia", item: "https://anzpostcode.com/au" },
+          { "@type": "ListItem", position: 3, name: "Compare Postcodes", item: "https://anzpostcode.com/au/compare" },
+        ],
+      }) }} />
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="mb-8">
           <h1 className="font-[family-name:var(--font-sora)] text-3xl font-bold text-[#0B2545] mb-2">

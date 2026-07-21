@@ -8,17 +8,20 @@ export const metadata: Metadata = {
   title: "New Zealand Postcode Guide – How NZ Postcodes Work",
   description: "New Zealand uses 4-digit postcodes introduced in 2006. Learn how NZ postcodes are structured, what the numbers mean, and how to find any NZ postcode.",
   alternates: { canonical: "https://anzpostcode.com/blog/nz-postcode-guide" },
-  openGraph: { locale: "en_NZ", url: "https://anzpostcode.com/blog/nz-postcode-guide" },
+  openGraph: { type: "article", locale: "en_NZ", url: "https://anzpostcode.com/blog/nz-postcode-guide", publishedTime: "2025-02-15T00:00:00.000Z", modifiedTime: "2025-02-15T00:00:00.000Z", authors: ["https://anzpostcode.com/about"], tags: ["postcodes", "New Zealand", "NZ Post"] },
 };
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "New Zealand Postcode Guide",
-  datePublished: "2025-01-01",
-  dateModified: "2025-01-01",
-  author: { "@type": "Organization", name: "ANZ Postcode" },
-  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  datePublished: "2025-02-15",
+  dateModified: "2025-02-15",
+  author: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com", logo: { "@type": "ImageObject", url: "https://anzpostcode.com/og-image.svg" } },
+  url: "https://anzpostcode.com/blog/nz-postcode-guide",
+  mainEntityOfPage: "https://anzpostcode.com/blog/nz-postcode-guide",
+  image: "https://anzpostcode.com/og-image.svg",
 };
 
 export default function NZPostcodeGuidePage() {

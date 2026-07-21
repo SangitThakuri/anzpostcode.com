@@ -8,7 +8,15 @@ export const metadata: Metadata = {
   title: "How Australian Postcodes Work – Format, History & State Guide",
   description: "Australia uses a 4-digit postcode system. The first digit maps to a state or territory — 2 for NSW, 3 for VIC, 4 for QLD, and so on. Full explainer inside.",
   alternates: { canonical: "https://anzpostcode.com/blog/how-australian-postcodes-work" },
-  openGraph: { locale: "en_AU", url: "https://anzpostcode.com/blog/how-australian-postcodes-work" },
+  openGraph: {
+    type: "article",
+    locale: "en_AU",
+    url: "https://anzpostcode.com/blog/how-australian-postcodes-work",
+    publishedTime: "2025-01-15T00:00:00.000Z",
+    modifiedTime: "2025-01-15T00:00:00.000Z",
+    authors: ["https://anzpostcode.com/about"],
+    tags: ["postcodes", "Australia", "mail", "state guide"],
+  },
 };
 
 const articleSchema = {
@@ -16,11 +24,13 @@ const articleSchema = {
   "@type": "Article",
   headline: "How Australian Postcodes Work",
   description: "Australia uses a 4-digit postcode system where the first digit maps to a state or territory.",
-  datePublished: "2025-01-01",
-  dateModified: "2025-01-01",
-  author: { "@type": "Organization", name: "ANZ Postcode" },
-  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  datePublished: "2025-01-15",
+  dateModified: "2025-01-15",
+  author: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com", logo: { "@type": "ImageObject", url: "https://anzpostcode.com/og-image.svg" } },
   url: "https://anzpostcode.com/blog/how-australian-postcodes-work",
+  mainEntityOfPage: "https://anzpostcode.com/blog/how-australian-postcodes-work",
+  image: "https://anzpostcode.com/og-image.svg",
 };
 
 export default function HowAUPostcodesWorkPage() {

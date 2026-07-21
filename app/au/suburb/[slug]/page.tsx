@@ -284,6 +284,8 @@ export default async function AUSuburbPage({ params }: Props) {
                     </li>
                   ))}
                   <li><Link href={`/au/state/${lg.state.toLowerCase()}`} className="text-[#E8472A] hover:underline">All {stName} postcodes</Link></li>
+                  <li><Link href={`/au/compare?a=${lg.postcodes[0]}`} className="text-[#E8472A] hover:underline">Compare with another postcode</Link></li>
+                  <li><Link href="/near-me" className="text-[#E8472A] hover:underline">Find my postcode</Link></li>
                   <li><Link href="/au/suburbs" className="text-[#E8472A] hover:underline">Browse all suburbs</Link></li>
                 </ul>
               </div>
@@ -299,6 +301,26 @@ export default async function AUSuburbPage({ params }: Props) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "FAQPage",
           mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })),
+        }) }} />
+        {nearbyLocalities.length > 0 && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org", "@type": "ItemList",
+            name: `Suburbs near ${name}, ${lg.state}`,
+            itemListElement: nearbyLocalities.slice(0, 8).map((l, i) => ({
+              "@type": "ListItem", position: i + 1,
+              name: titleCase(l.locality),
+              url: `https://anzpostcode.com/au/suburb/${l.slug}`,
+            })),
+          }) }} />
+        )}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org", "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://anzpostcode.com" },
+            { "@type": "ListItem", position: 2, name: "Australia", item: "https://anzpostcode.com/au" },
+            { "@type": "ListItem", position: 3, name: stName, item: `https://anzpostcode.com/au/state/${lg.state.toLowerCase()}` },
+            { "@type": "ListItem", position: 4, name, item: `https://anzpostcode.com/au/suburb/${slug}` },
+          ],
         }) }} />
       </main>
       <Footer />

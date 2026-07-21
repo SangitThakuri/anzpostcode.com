@@ -45,6 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@anzpostcode",
     images: ["/og-image.svg"],
   },
   robots: {

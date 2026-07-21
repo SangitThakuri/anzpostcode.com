@@ -340,14 +340,26 @@ export default async function AUPostcodePage({ params }: Props) {
                       All {stName} postcodes
                     </Link>
                   </li>
+                  {pg.localities.map((loc) => (
+                    <li key={loc}>
+                      <Link href={`/au/suburb/${encodeURIComponent(loc.toLowerCase().replace(/\s+/g, "-"))}-${pg.state.toLowerCase()}`} className="text-[#E8472A] hover:underline">
+                        {titleCase(loc)} suburb details
+                      </Link>
+                    </li>
+                  ))}
+                  <li>
+                    <Link href={`/au/compare?a=${postcode}`} className="text-[#E8472A] hover:underline">
+                      Compare with another postcode
+                    </Link>
+                  </li>
                   <li>
                     <Link href="/au/postcodes" className="text-[#E8472A] hover:underline">
                       Browse all AU postcodes
                     </Link>
                   </li>
                   <li>
-                    <Link href="/search" className="text-[#E8472A] hover:underline">
-                      Postcode search
+                    <Link href="/near-me" className="text-[#E8472A] hover:underline">
+                      Find my postcode
                     </Link>
                   </li>
                 </ul>
@@ -385,6 +397,39 @@ export default async function AUPostcodePage({ params }: Props) {
                 name: f.question,
                 acceptedAnswer: { "@type": "Answer", text: f.answer },
               })),
+            }),
+          }}
+        />
+        {nearbyLocalities.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                name: `Suburbs near postcode ${postcode}`,
+                itemListElement: nearbyLocalities.slice(0, 8).map((l, i) => ({
+                  "@type": "ListItem",
+                  position: i + 1,
+                  name: titleCase(l.locality),
+                  url: `https://anzpostcode.com/au/suburb/${l.slug}`,
+                })),
+              }),
+            }}
+          />
+        )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://anzpostcode.com" },
+                { "@type": "ListItem", position: 2, name: "Australia", item: "https://anzpostcode.com/au" },
+                { "@type": "ListItem", position: 3, name: stName, item: `https://anzpostcode.com/au/state/${pg.state.toLowerCase()}` },
+                { "@type": "ListItem", position: 4, name: `Postcode ${postcode}`, item: `https://anzpostcode.com/au/postcode/${postcode}` },
+              ],
             }),
           }}
         />

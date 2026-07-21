@@ -78,19 +78,23 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Info */}
+          {/* Tools & Blog */}
           <div>
             <h3 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">
-              Information
+              Tools & Guides
             </h3>
             <ul className="space-y-2">
               {[
-                { href: "/about", label: "About Us" },
-                { href: "/data-sources", label: "Data Sources" },
+                { href: "/near-me", label: "Find My Postcode" },
+                { href: "/au/compare", label: "Compare Postcodes" },
+                { href: "/search", label: "Distance Calculator" },
+                { href: "/blog", label: "Postcode Blog" },
+                { href: "/blog/how-australian-postcodes-work", label: "How AU Postcodes Work" },
+                { href: "/blog/major-city-postcodes-australia", label: "Major City Postcodes" },
+                { href: "/blog/postcode-vs-suburb", label: "Postcode vs Suburb" },
+                { href: "/about", label: "About" },
                 { href: "/contact", label: "Contact" },
                 { href: "/privacy-policy", label: "Privacy Policy" },
-                { href: "/terms", label: "Terms of Use" },
-                { href: "/disclaimer", label: "Disclaimer" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

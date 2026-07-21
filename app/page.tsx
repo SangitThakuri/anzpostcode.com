@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { MapPin, Search, Globe } from "lucide-react";
+import { MapPin, Search, Globe, Navigation, ArrowLeftRight, Ruler } from "lucide-react";
+import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FAQAccordion from "@/components/ui/FAQAccordion";
@@ -102,6 +103,33 @@ export default function HomePage() {
                 <h3 className="font-[family-name:var(--font-sora)] font-bold text-[#0B2545] mb-2">{step.title}</h3>
                 <p className="text-[#6B7280] text-sm leading-relaxed">{step.desc}</p>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Tools section */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-8">
+          <h2 className="font-[family-name:var(--font-sora)] text-xl font-bold text-[#0B2545] mb-4">Postcode Tools</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { href: "/near-me", icon: <Navigation className="w-5 h-5" />, title: "Find My Postcode", desc: "Use GPS to instantly find what postcode you're in right now.", color: "#E8472A" },
+              { href: "/au/compare", icon: <ArrowLeftRight className="w-5 h-5" />, title: "Compare Postcodes", desc: "Compare two AU postcodes side-by-side — details and distance.", color: "#0B2545" },
+              { href: "/search", icon: <Ruler className="w-5 h-5" />, title: "Distance Calculator", desc: "Find the straight-line distance between any two postcodes or suburbs.", color: "#2D6A4F" },
+            ].map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group bg-white rounded-xl border border-[#E2E6ED] p-5 hover:shadow-md hover:border-current transition-all flex gap-4 items-start"
+                style={{ "--hover-color": tool.color } as React.CSSProperties}
+              >
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white flex-shrink-0 transition-colors" style={{ background: tool.color }}>
+                  {tool.icon}
+                </div>
+                <div>
+                  <div className="font-[family-name:var(--font-sora)] font-bold text-[#0B2545] text-sm mb-1 group-hover:text-[#E8472A] transition-colors">{tool.title}</div>
+                  <div className="text-[#6B7280] text-xs leading-relaxed">{tool.desc}</div>
+                </div>
+              </Link>
             ))}
           </div>
         </section>

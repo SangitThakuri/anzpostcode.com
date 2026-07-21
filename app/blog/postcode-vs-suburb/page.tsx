@@ -8,16 +8,20 @@ export const metadata: Metadata = {
   title: "Postcode vs Suburb: What's the Difference? – ANZ Postcode",
   description: "A suburb is a geographic area; a postcode is a postal delivery zone. They don't always match — one suburb can have multiple postcodes, and vice versa. Here's why.",
   alternates: { canonical: "https://anzpostcode.com/blog/postcode-vs-suburb" },
+  openGraph: { type: "article", locale: "en_AU", url: "https://anzpostcode.com/blog/postcode-vs-suburb", publishedTime: "2025-03-01T00:00:00.000Z", modifiedTime: "2025-03-01T00:00:00.000Z", authors: ["https://anzpostcode.com/about"], tags: ["postcodes", "suburbs", "Australia", "explainer"] },
 };
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: "Postcode vs Suburb: What's the Difference?",
-  datePublished: "2025-01-01",
-  dateModified: "2025-01-01",
-  author: { "@type": "Organization", name: "ANZ Postcode" },
-  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  datePublished: "2025-03-01",
+  dateModified: "2025-03-01",
+  author: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com" },
+  publisher: { "@type": "Organization", name: "ANZ Postcode", url: "https://anzpostcode.com", logo: { "@type": "ImageObject", url: "https://anzpostcode.com/og-image.svg" } },
+  url: "https://anzpostcode.com/blog/postcode-vs-suburb",
+  mainEntityOfPage: "https://anzpostcode.com/blog/postcode-vs-suburb",
+  image: "https://anzpostcode.com/og-image.svg",
 };
 
 export default function PostcodeVsSuburbPage() {
