@@ -27,7 +27,7 @@ export default function NearMeClient() {
     setStatus("loading");
     navigator.geolocation.getCurrentPosition(
       async ({ coords }) => {
-        const { lat, longitude: lng } = coords;
+        const { latitude: lat, longitude: lng } = coords;
         const { getSearchIndex } = await import("@/lib/data");
         const index = getSearchIndex().filter((i) => i.lat && i.lng);
 
